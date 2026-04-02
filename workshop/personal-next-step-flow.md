@@ -12,7 +12,7 @@ Stage framing:
 
 Participant-facing start:
 - `помоги мне определить следующий шаг`
-- `давай сформулируем мой personal next step`
+- `давай сформулируем мой следующий шаг`
 
 Save:
 - personal_next_step.md

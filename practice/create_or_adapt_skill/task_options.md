@@ -10,11 +10,9 @@ Typical input:
 - or a clearly specified Telegram group/channel path for a later integration guide.
 
 Typical output:
-- grouped themes,
-- notable updates,
-- watch items,
-- action items,
-- unanswered questions.
+- normalized raw packet from the export,
+- obvious noise removed,
+- short handoff note for downstream processing.
 
 ## Option 2. Review Monitor
 Use when a team needs to turn messy reviews or feedback into a cleaner signal layer.
@@ -26,10 +24,9 @@ Typical input:
 - survey comments.
 
 Typical output:
-- signal clusters,
-- urgency flags,
-- what changed,
-- suggested follow-up buckets.
+- normalized raw review packet,
+- obvious duplicates or empty noise removed,
+- short handoff note for downstream processing.
 
 ## Option 3. Notion Sync
 Use when a team already has structured outputs and wants to lay them out in a Notion-ready format.

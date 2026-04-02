@@ -17,8 +17,8 @@ Convert the shared-case raw inputs into a stable structured working set for the 
   - `shared_case/inputs/raw_tasks.md`
   - `shared_case/inputs/user_signals.md`
 - Draft shown as: structured working set in chat
-- Approved file path: `shared_case/outputs/structured_inputs.md`
-- State file: `shared_case/outputs/shared_case_state.md`
+- Approved file path: `shared_case/run_outputs/structured_inputs.md`
+- State file: `shared_case/run_outputs/shared_case_state.md`
 - Next skill: `shared-case-analysis`
 - Human review question: `Подтвердить structured inputs или попросить правку?`
 
@@ -35,8 +35,8 @@ Convert the shared-case raw inputs into a stable structured working set for the 
 3. Collapse obvious duplicates without hiding contradictions.
 4. Normalize the wording into clean workshop language.
 5. Show the result as a draft first.
-6. Save the approved result to `shared_case/outputs/structured_inputs.md` only after explicit approval or a direct save request.
-7. Update `shared_case/outputs/shared_case_state.md` so it points to `shared-case-analysis`.
+6. Save the approved result to `shared_case/run_outputs/structured_inputs.md` only after explicit approval or a direct save request.
+7. Update `shared_case/run_outputs/shared_case_state.md` so it points to `shared-case-analysis`.
 
 ## Guardrails
 - Do not diagnose root causes yet.
@@ -45,4 +45,4 @@ Convert the shared-case raw inputs into a stable structured working set for the 
 - Do not hide ambiguity or contradictions.
 
 ## Handoff
-Pass only the approved `shared_case/outputs/structured_inputs.md` artifact to `shared-case-analysis`.
+Pass only the approved `shared_case/run_outputs/structured_inputs.md` artifact to `shared-case-analysis`.

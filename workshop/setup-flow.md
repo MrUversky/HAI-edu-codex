@@ -1,28 +1,32 @@
-# Setup Flow
+# Настройка
 
-Goal: light personalization only.
+Цель: лёгкая персонализация без раннего ухода в личный кейс.
 
-Stage framing:
-- Current stage: `setup`
-- What is already done: orientation only
-- What we are doing now: collect light participant context
-- Expected artifact: `participants/<name>/participant_setup.md`
+Подача этапа:
+- Текущий этап: `setup`
+- Что уже сделано: только ориентация
+- Что делаем сейчас: собираем лёгкий контекст участника
+- Ожидаемый артефакт: `participants/<name>/participant_setup.md`
 
-Participant-facing start:
-- `Давай начнем setup`
-- `Проведи меня через setup`
+Короткий запуск:
+- `запусти урок для участника`
+- `проведи меня через настройку`
 
-Collect:
-- participant name,
-- role or function,
-- AI familiarity (`начинающий / средний / продвинутый`),
-- preferred explanation style,
-- main goal for the lesson.
+Собираем:
+- имя участника,
+- роль или функцию,
+- уровень знакомства с AI (`начинающий / средний / продвинутый`),
+- один из трёх стилей объяснения:
+  - `коротко и по шагам`
+  - `сначала схема, потом детали`
+  - `с примерами на каждом этапе`
+- главную цель на урок.
 
-Save to:
+Сохраняем в:
 `participants/<name>/participant_setup.md`
 
-Important:
-- do not ask for the participant's full business case here;
-- do not start searching for a personal use case yet;
-- optimize for comfort, clarity, and pacing.
+Важно:
+- не спрашивать полный бизнес-кейс;
+- не искать личный use case на этом этапе;
+- после сохранения использовать имя участника естественно и умеренно;
+- дальше реально держать выбранный стиль объяснения.

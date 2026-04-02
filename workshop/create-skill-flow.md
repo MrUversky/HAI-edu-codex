@@ -1,42 +1,46 @@
-# Create or Adapt Skill Flow
+# Создать Или Адаптировать Навык
 
-Goal: participants either:
-1. create one bounded skill for their own repeated work situation,
-2. or adapt one of the offered workshop skill scenarios.
+Цель:
+1. создать один ограниченный навык под свою повторяющуюся рабочую ситуацию;
+2. или адаптировать один из предложенных сценариев.
 
-Stage framing:
-- Current stage: `create or adapt skill`
-- What is already done: setup, shared case, architecture unpacking
-- What we are doing now: design one bounded participant skill
-- Expected artifact: `.agents/skills/<skill-name>/SKILL.md`
+Подача этапа:
+- Текущий этап: `создать или адаптировать навык`
+- Что уже сделано: `setup`, общий кейс, разбор архитектуры
+- Что делаем сейчас: проектируем один ограниченный навык участника
+- Ожидаемый артефакт: `.agents/skills/<skill-name>/SKILL.md`
 
-Participant-facing start:
-- `помоги создать skill`
-- `хочу адаптировать skill`
-- `давай выберем skill-сценарий`
+Короткий запуск:
+- `помоги создать навык`
+- `хочу адаптировать навык`
+- `давай выберем сценарий`
 
-Participant flow:
-1. announce the stage explicitly;
-2. use `.agents/skills/skill-builder/SKILL.md` as the guided runtime entrypoint;
-3. offer a short scenario catalog;
-3. ask one practical question at a time;
-4. draft the skill in markdown;
-5. add integration or fallback notes only if needed;
-6. send the draft to validation.
+Ход этапа:
+1. явно назвать этап;
+2. использовать `.agents/skills/skill-builder/SKILL.md` как guided entrypoint;
+3. предложить короткий каталог сценариев;
+4. задавать по одному практическому вопросу;
+5. собрать черновик навыка в markdown;
+6. добавить integration или fallback notes только если это действительно нужно;
+7. отправить черновик в validation;
+8. после validation предложить один практический прогон на реальном или тестовом входе.
 
-Required outputs:
-- one skill folder in `.agents/skills/<skill-name>/`,
+Обязательные артефакты:
+- одна папка навыка в `.agents/skills/<skill-name>/`,
 - `SKILL.md`,
-- optional integration or stub notes,
+- optional integration или stub notes,
+- `validation_trace.md`,
 - `validation_report.md`.
 
-Scenario catalog for `v1.1`:
+Каталог сценариев для `v1.1`:
 - `telegram-digest`
 - `review-monitor`
 - `notion-sync`
 - `resume-analysis`
 
-Important:
-- use one bounded scenario, not a broad system;
-- live integrations are optional and must be labeled clearly;
-- validation is mandatory before final submission.
+Важно:
+- использовать один ограниченный сценарий, а не широкую систему;
+- live integrations не обязательны и должны быть явно помечены;
+- для `telegram-digest` и `review-monitor` трактовать навык как сборщик сырого пакета данных, а не как финальный анализатор;
+- не спрашивать про конкретные runtime-файлы или экспорты, пока ещё идёт проектирование навыка;
+- validation обязательна до финального завершения этапа.

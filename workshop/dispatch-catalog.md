@@ -1,20 +1,42 @@
-# Workshop Dispatch Catalog
+# Каталог Команд Урока
 
-Purpose: canonical mapping from short participant commands to workshop runtime steps.
+Назначение: каноническая карта коротких команд участника и ведущего.
 
-Use this file together with `AGENTS.md`.
+Использовать вместе с `AGENTS.md`.
 
-## Dispatch rules
+## Правила маршрутизации
+
+### Action: start-participant-lesson
+- Intent patterns:
+  - `запусти урок для участника`
+  - `проведи меня по уроку`
+  - `давай начнем урок`
+- Entry source: `workshop/start-prompt-participant.md`
+- Expected behavior:
+  - коротко объяснить маршрут урока
+  - начать с этапа `setup`
+  - назвать первый ожидаемый артефакт
+
+### Action: start-facilitator-lesson
+- Intent patterns:
+  - `запусти урок для ведущего`
+  - `помогай мне вести урок`
+  - `запусти режим ведущего`
+- Entry source: `workshop/start-prompt-facilitator.md`
+- Expected behavior:
+  - коротко объяснить маршрут урока для ведущего
+  - подсказать, какой файл открыть первым
+  - начать с этапа `setup`
 
 ### Action: start-shared-case
 - Intent patterns:
-  - `запусти shared case`
-  - `давай начнем shared case`
+  - `запусти общий кейс`
+  - `давай начнем общий кейс`
   - `запусти общую цепочку`
 - Entry skill: `.agents/skills/shared-case-intake/SKILL.md`
 - Reads from: `shared_case/inputs/*`
 - Draft shown as: `structured_inputs` draft
-- Approved file path: `shared_case/outputs/structured_inputs.md`
+- Approved file path: `shared_case/run_outputs/structured_inputs.md`
 - Next step: `shared-case-analysis`
 
 ### Action: process-raw-data
@@ -25,7 +47,7 @@ Use this file together with `AGENTS.md`.
 - Entry skill: `.agents/skills/shared-case-intake/SKILL.md`
 - Reads from: `shared_case/inputs/*`
 - Draft shown as: `structured_inputs` draft
-- Approved file path: `shared_case/outputs/structured_inputs.md`
+- Approved file path: `shared_case/run_outputs/structured_inputs.md`
 - Next step: `shared-case-analysis`
 
 ### Action: show-next-step
@@ -33,41 +55,48 @@ Use this file together with `AGENTS.md`.
   - `покажи следующий шаг`
   - `что дальше`
   - `какой следующий этап`
-- Entry source: `shared_case/outputs/shared_case_state.md` if present, otherwise infer from approved artifacts
+- Entry source: `shared_case/run_outputs/shared_case_state.md` if present, otherwise infer from approved runtime artifacts
 - Expected behavior:
-  - state current stage explicitly
-  - name the next skill or workflow step
-  - name the next expected artifact
+  - явно назвать, что уже сохранено
+  - назвать следующий этап
+  - назвать следующий ожидаемый артефакт
 
 ### Action: run-task-register
 - Intent patterns:
-  - `сделай task register`
+  - `собери рабочий план`
   - `собери план задач`
   - `добавь финальный рабочий план`
 - Entry skill: `.agents/skills/task-register/SKILL.md`
-- Reads from: `shared_case/outputs/pilot_card.md`
+- Reads from: `shared_case/run_outputs/pilot_card.md`
 - Draft shown as: `task_register` draft
-- Approved file path: `shared_case/outputs/task_register.md`
+- Approved file path: `shared_case/run_outputs/task_register.md`
 - Next step: `architecture unpacking`
 
 ### Action: validate-skill
 - Intent patterns:
+  - `проверь мой навык`
   - `проверь мой skill`
   - `запусти валидацию`
+  - `сделай отчёт валидации`
   - `сделай validation report`
 - Entry workflow:
   - participant-facing skill: `.agents/skills/validate-skill/SKILL.md`
   - internal orchestrator: `.codex/agents/validation-orchestrator.toml`
 - Reads from: target skill folder in `.agents/skills/<skill-name>/`
-- Draft shown as: validation summary draft
-- Approved file path: `.agents/skills/<skill-name>/validation_report.md`
-- Next step: `personal-next-step`
+- Draft shown as:
+  - запуск агента валидации
+  - короткий trace внутренних проверок
+  - итоговый validation summary draft
+- Approved file paths:
+  - `.agents/skills/<skill-name>/validation_trace.md`
+  - `.agents/skills/<skill-name>/validation_report.md`
+- Next step: `practice-check-skill`
 
 ### Action: create-or-adapt-skill
 - Intent patterns:
-  - `помоги создать skill`
-  - `хочу сделать свой skill`
-  - `давай адаптируем skill`
+  - `помоги создать навык`
+  - `хочу сделать свой навык`
+  - `давай адаптируем навык`
 - Entry skill: `.agents/skills/skill-builder/SKILL.md`
 - Reads from:
   - `practice/create_or_adapt_skill/task_options.md`
@@ -76,16 +105,33 @@ Use this file together with `AGENTS.md`.
 - Approved file path: `.agents/skills/<skill-name>/SKILL.md`
 - Next step: `validate-skill`
 
+### Action: practice-check-skill
+- Intent patterns:
+  - `проверь навык на практике`
+  - `прогони навык на одном входе`
+  - `дай тестовый прогон навыка`
+- Entry workflow:
+  - use the selected skill
+  - use one real or test input provided by the participant
+- Reads from:
+  - `.agents/skills/<skill-name>/SKILL.md`
+  - one provided export, transcript, note bundle, or other bounded input
+- Draft shown as:
+  - один практический прогон навыка
+  - skill-specific runtime artifact draft
+- Approved file path: the runtime artifact declared by the selected skill
+- Next step: `personal-next-step`
+
 ### Action: personal-next-step
 - Intent patterns:
   - `помоги мне определить следующий шаг`
-  - `давай сформулируем мой personal next step`
-  - `соберем final action card`
+  - `давай сформулируем мой следующий шаг`
+  - `соберем итоговую карточку действия`
 - Entry skill: `.agents/skills/personal-next-step/SKILL.md`
 - Reads from:
   - `participants/<name>/participant_setup.md`
   - selected skill artifacts
-  - optional validation report
+  - optional validation report and validation trace
 - Draft shown as: guided reflection draft
 - Approved file paths:
   - `participants/<name>/personal_next_step.md`

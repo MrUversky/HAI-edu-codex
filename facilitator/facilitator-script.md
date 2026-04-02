@@ -15,7 +15,9 @@
 - redirect broad transformation talk into one bounded pilot
 - keep the shared case grounded in approved artifacts, not chat drift
 - use `workshop/dispatch-catalog.md` when participant commands need explicit runtime interpretation
-- during shared case, treat `shared_case/outputs/shared_case_state.md` as the default source of truth for current stage and next artifact
+- during the live shared case, treat `shared_case/run_outputs/shared_case_state.md` as the default source of truth for current stage and next artifact
+- treat `shared_case/outputs/*` as prepared examples and recovery materials, not as the live output path
+- during validation, say explicitly that the validation agent is running several checks in sequence
 
 ## If participants get lost
 Ask:

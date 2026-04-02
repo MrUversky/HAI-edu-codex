@@ -30,6 +30,7 @@ Legacy source material:
 - `validators/eval-orchestrator.md`
 
 ## Expected outputs
+- validation_trace.md
 - validation_report.md
 - total_score
 - final verdict: pass / revise / strong pass
@@ -40,6 +41,7 @@ Legacy source material:
 - Stub integrations must be labeled clearly, or safety validation should fail.
 - Canonical skill layout and handoff pattern should be checked together with the spec itself.
 - Validation should feel like one participant-facing command, not like a manual walk through validator files.
+- The participant should see that one validation agent ran several checks in sequence and assembled the result.
 
 ## Recommended human review points
 - before accepting a live integration claim
