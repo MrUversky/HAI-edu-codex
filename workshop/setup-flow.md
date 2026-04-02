@@ -2,10 +2,20 @@
 
 Goal: light personalization only.
 
+Stage framing:
+- Current stage: `setup`
+- What is already done: orientation only
+- What we are doing now: collect light participant context
+- Expected artifact: `participants/<name>/participant_setup.md`
+
+Participant-facing start:
+- `Давай начнем setup`
+- `Проведи меня через setup`
+
 Collect:
 - participant name,
 - role or function,
-- AI familiarity,
+- AI familiarity (`начинающий / средний / продвинутый`),
 - preferred explanation style,
 - main goal for the lesson.
 

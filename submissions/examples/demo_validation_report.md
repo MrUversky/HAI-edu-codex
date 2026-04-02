@@ -1,14 +1,14 @@
 # Validation Report
 
-## Agent curator verdict
+## Role and scope verdict
 **Pass with revisions**
 
-The adapted Notion Sync Agent has a clear role and a bounded JTBD. Inputs and outputs are realistic for a workshop pilot. The main revision needed is to make the output contract slightly stricter for ambiguous owner assignment.
+The adapted Notion Sync skill has a clear role and a bounded JTBD. Inputs and outputs are realistic for a workshop pilot. The main revision needed is to make the output contract slightly stricter for ambiguous owner assignment.
 
 ## Skill curator verdict
 **Pass**
 
-The participant correctly kept reusable formatting logic separate from the core agent role. A future improvement would be to extract one reusable field-normalization skill.
+The participant correctly kept reusable formatting logic separate from the core skill purpose. A future improvement would be to extract one reusable field-normalization helper.
 
 ## Safety validator verdict
 **Pass**
@@ -18,7 +18,7 @@ The integration is explicitly marked as a stub. No live write-back is implied. H
 ## Architecture validator verdict
 **Pass with revisions**
 
-The architecture is appropriate as a single bounded agent for V1. It should not be split yet. However, if the workflow later adds review and owner inference at scale, a separate validator or reviewer layer may be warranted.
+The architecture is appropriate as a single bounded skill for V1. It should not be split yet. However, if the workflow later adds review and owner inference at scale, a separate reviewer layer may be warranted.
 
 ## Eval orchestrator verdict
 **Final verdict: pass / revise**

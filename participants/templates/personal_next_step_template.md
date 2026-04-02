@@ -1,9 +1,10 @@
 # Personal Next Step
 
 My role:
-My recurring chaos area:
+Selected skill:
+My repeating work situation:
 Typical inputs:
-What I do manually now:
-What repeats:
-Possible AI-assisted scenario:
-Why this is a good first candidate:
+What I still do manually:
+What repeats enough to justify a first test:
+My one bounded first scenario:
+Why this is a good next step now:

@@ -1,13 +1,13 @@
 # Lesson Frame
 
 This file is the stable frame for the workshop.
-When the repo evolves, contributors should return to this file before changing flows, prompts, agents, or practice design.
+When the repo evolves, contributors should return to this file before changing flows, prompts, skills, or practice design.
 
 ## 1. Why this lesson exists
 
 This lesson is not an AI-overview session and not a generic prompting class.
 It exists to help participants:
-1. see how agent systems actually work,
+1. see how skill-based workflows actually work in Codex,
 2. understand why this is more than one good prompt,
 3. touch the mechanics themselves,
 4. identify one realistic next step for their own work.
@@ -16,13 +16,12 @@ It exists to help participants:
 
 The intended learning path is:
 
-1. **Observe** — see a shared case flow from chaos to structure.
+1. **Observe** — run a shared case flow from chaos to structure.
 2. **Understand** — unpack roles, handoffs, guardrails, and workflow logic.
-3. **Touch** — do one small transformation in mini-practice.
-4. **Create or adapt** — build or adapt one bounded agent.
-5. **Validate** — run a structured review pipeline.
-6. **Apply** — map the mechanism to one realistic personal use case.
-7. **Commit** — leave with one next step.
+3. **Create or adapt** — build or adapt one bounded skill.
+4. **Validate** — run a structured review pipeline.
+5. **Apply** — map the mechanism to one realistic personal use case.
+6. **Commit** — leave with one next step.
 
 This order matters.
 Participants should not be pushed into deep personal use-case design too early.
@@ -30,8 +29,8 @@ Participants should not be pushed into deep personal use-case design too early.
 ## 3. What success looks like
 
 The lesson is successful if a participant leaves with:
-- a practical mental model of how agent systems work,
-- experience of touching at least one part of the workflow,
+- a practical mental model of how the skill chain works,
+- experience of running at least one part of the workflow hands-on,
 - one bounded use case or candidate scenario,
 - one realistic next step they could take after the lesson.
 
@@ -56,7 +55,7 @@ This lesson is **not**:
 
 ### A. Shared case before personal case
 The shared case is the main teaching object.
-Personal application comes after shared understanding and mini-practice.
+Personal application comes after shared understanding and validation of one bounded skill idea.
 
 ### B. Structure before creativity
 Participants need a scaffold before open-ended design.
@@ -81,8 +80,7 @@ If new files or flows are added, these things should remain true:
 - participants are not overloaded too early,
 - the order of the journey stays intact,
 - the shared case remains central,
-- mini-practice remains bounded,
-- create/adapt-agent remains scoped,
+- create/adapt-skill remains scoped,
 - validation remains mandatory,
 - personal next step stays realistic and specific.
 
@@ -110,8 +108,8 @@ When in doubt, prioritize in this order:
 
 By the end of the lesson, the participant should ideally have:
 - `participant_setup.md`
-- one mini-practice result or observed transformation
-- one created or adapted agent spec
+- one approved shared-case chain run or observed transformation
+- one created or adapted skill spec
 - one validation result
 - `personal_next_step.md`
 - `final_action_card.md`

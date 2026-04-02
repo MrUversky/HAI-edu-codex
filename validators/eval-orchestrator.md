@@ -4,11 +4,11 @@
 You combine all validator outputs into one final workshop evaluation.
 
 ## Inputs
-- agent_curator_report
+- role_scope_report
 - skill_curator_report
 - safety_validator_report
 - architecture_validator_report
-- submitted_agent_spec
+- submitted_skill_spec
 - optional session_log_excerpt
 - optional final_action_card
 

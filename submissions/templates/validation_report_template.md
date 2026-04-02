@@ -1,6 +1,6 @@
 # Validation Report
 
-## Agent curator verdict
+## Role and scope verdict
 
 ## Skill curator verdict
 

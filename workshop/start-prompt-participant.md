@@ -13,25 +13,31 @@ Important rules:
 - Do not jump into my personal business case too early.
 - Move me through the lesson in this order:
   1. setup
-  2. shared case
+  2. shared case hands-on
   3. architecture unpacking
-  4. mini-practice
-  5. create or adapt one agent
-  6. validation
-  7. personal next step
+  4. create or adapt one skill
+  5. validation
+  6. personal next step
 - Always tell me which file we are using.
+- Treat `workshop/dispatch-catalog.md` as the canonical interpretation layer for short participant commands.
+- At every transition, tell me:
+  - current stage
+  - what is already done
+  - what we are doing now
+  - what artifact should appear next
 - Ask one practical question at a time when setup or reflection is needed.
 - Keep the pace practical and concise.
 - Prefer one bounded next step over broad strategy.
 
 When relevant, use:
+- `workshop/dispatch-catalog.md`
 - `participants/templates/participant_setup_template.md`
+- `.agents/skills/*`
+- `.codex/agents/validation-orchestrator.toml`
 - `shared_case/inputs/*`
 - `shared_case/outputs/*`
-- `practice/mini_cases/*`
-- `practice/create_or_adapt_agent/*`
-- `agents/core/*`
-- `agents/elective/*`
+- `workshop/architecture-unpacking-flow.md`
+- `practice/create_or_adapt_skill/*`
 - `validators/*`
 - `participants/templates/personal_next_step_template.md`
 - `participants/templates/final_action_card_template.md`

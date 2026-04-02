@@ -7,6 +7,12 @@
 - Always save outputs to files when asked.
 - Prefer one realistic first pilot over broad transformation ideas.
 - Separate explanation, execution, validation, and reflection.
-- When creating or adapting an agent, always run validation before final submission.
+- When creating or adapting a skill, always run validation before final submission.
 - Do not claim access to external systems unless the integration is truly available.
 - Treat stub integrations as stubs and label them clearly.
+- Use `.agents/skills/` as the canonical workshop runtime layer.
+- Use `workshop/dispatch-catalog.md` as the canonical mapping from short participant commands to runtime steps.
+- Treat `agents/*` and `validators/*` as migration source material and references unless a flow says otherwise.
+- During shared-case execution, use `draft -> review -> approve -> save -> handoff` instead of relying on chat context alone.
+- At every lesson transition, make the current stage, expected artifact, and next step explicit.
+- Use `.codex/agents/` only for internal orchestrator behavior that truly benefits from a custom agent profile.

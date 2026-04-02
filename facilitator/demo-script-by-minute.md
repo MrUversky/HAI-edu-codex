@@ -4,7 +4,7 @@
 Frame the lesson.
 Say explicitly:
 - this is not an AI-overview session
-- we will observe, understand, touch, then apply
+- we will run a shared skill chain, understand it, then apply it
 - the final outcome is one realistic next step
 
 ## 5–10 min
@@ -26,64 +26,53 @@ Goal:
 - make the chaos feel real
 
 ## 25–35 min
-Run the core flow through Intake and Analysis.
-Show:
-- `shared_case/outputs/structured_inputs.md`
-- `shared_case/outputs/signal_map.md`
-Pause briefly for one or two observations from the room.
+Run the shared-case skills through `shared-case-intake` and `shared-case-analysis`.
+Goal:
+- participants run the same steps locally
+- each step produces an approved artifact
 
 ## 35–45 min
-Run the core flow through Workflow and Experiment.
-Show:
-- `shared_case/outputs/workflow_draft.md`
-- `shared_case/outputs/pilot_card.md`
+Run `shared-case-workflow` and `shared-case-experiment`.
 Goal:
-- participants see the full transformation from chaos to pilot
+- participants see the full transformation from chaos to a bounded pilot
+- the chain feels like saved handoffs, not one long chat
 
-## 45–55 min
+## 45–50 min
+Run `task-register`.
+Goal:
+- participants see the last hop from pilot concept to an operational first-sprint artifact
+- the shared case ends on `task_register.md`, not on `pilot_card.md`
+
+## 50–60 min
 Unpack the architecture.
 Explain:
-- why there are multiple agents
+- why there are multiple skills
 - where human judgment stays
 - why this is more than one prompt
+- why `draft -> review -> approve -> save -> handoff` matters
 
-## 55–65 min
-Practice pause.
-Switch to mini-practice.
+## 60–70 min
+Introduce create-or-adapt-skill practice.
 Use:
-- `practice/mini_cases/practice_input_a.md`
-- or `practice/mini_cases/practice_input_b.md`
-Goal:
-- participants touch one transformation step themselves
+- `.agents/skills/skill-builder/SKILL.md`
+- `practice/create_or_adapt_skill/task_options.md`
+- `practice/create_or_adapt_skill/skill_spec_template.md`
+- `practice/create_or_adapt_skill/integration_stub_template.md`
 
-## 65–80 min
-Continue mini-practice and debrief.
-Ask:
-- what changed?
-- what was easier after structure?
-- where was judgment still needed?
-
-## 80–90 min
-Introduce create-or-adapt-agent practice.
-Use:
-- `practice/create_or_adapt_agent/task_options.md`
-- `practice/create_or_adapt_agent/agent_spec_template.md`
-- `practice/create_or_adapt_agent/integration_stub_template.md`
-
-## 90–105 min
-Participants create or adapt an agent.
+## 70–95 min
+Participants create or adapt one skill.
 Facilitator rule:
 keep scope narrow; one source, one transformation, one useful output.
 
-## 105–112 min
+## 95–105 min
 Run validation.
 Use:
-- `evals/run_evaluation_flow.md`
-- `validators/*`
+- `.agents/skills/validate-skill/SKILL.md`
+- `.codex/agents/validation-orchestrator.toml`
 Goal:
 - every participant gets structured feedback, not vague praise
 
-## 112–118 min
+## 105–118 min
 Switch to personal next step.
 Use:
 - `participants/templates/personal_next_step_template.md`
@@ -100,5 +89,4 @@ Repeat:
 
 ## Recovery switch points
 - If shared-case demo breaks: switch at 25–45 min to the prepared files in `shared_case/outputs/`.
-- If mini-practice overwhelms participants: shorten to one transformation only at 55–65 min.
-- If create/adapt scope explodes: intervene immediately at 90–105 min and force a smaller pilot.
+- If create/adapt scope explodes: intervene immediately at 65–95 min and force a smaller pilot.

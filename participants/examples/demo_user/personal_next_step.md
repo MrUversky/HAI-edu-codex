@@ -2,7 +2,9 @@
 
 My role: I help internal teams run and improve operational learning experiences.
 
-My recurring chaos area: Inputs for internal workshops and enablement sessions arrive from many people in many formats, and I spend too much time turning them into something coherent.
+Selected skill: notion-sync
+
+My repeating work situation: Inputs for internal workshops and enablement sessions arrive from many people in many formats, and I spend too much time turning them into something coherent.
 
 Typical inputs:
 - meeting notes
@@ -11,23 +13,23 @@ Typical inputs:
 - rough task lists
 - last-minute constraints
 
-What I do manually now:
+What I still do manually:
 - read everything
 - summarize by hand
 - try to identify the main tensions
 - decide what to include or exclude
 - rebuild the structure from scratch every time
 
-What repeats:
+What repeats enough to justify a first test:
 - intake normalization
 - signal extraction
 - action sorting
 - deciding what should become a bounded pilot
 
-Possible AI-assisted scenario:
-Use an intake + analysis + workflow + experiment flow to turn messy workshop planning material into a structured lesson draft and first-pilot recommendation.
+My one bounded first scenario:
+Use a bounded skill chain to turn messy workshop planning material into a structured lesson draft and a Notion-ready follow-up structure.
 
-Why this is a good first candidate:
+Why this is a good next step now:
 - the inputs are already mostly text
 - the work repeats often
 - the value of clearer structure is immediate
