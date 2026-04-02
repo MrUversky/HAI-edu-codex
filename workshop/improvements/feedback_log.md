@@ -33,6 +33,40 @@ Purpose: фиксируем замечания по каркасу урока (�
 - selective cleanup or archival of fully outdated backlog entries
 
 ### 2026-04-03 XX:XX (captured)
+- Stage: shared case runtime outputs
+- Observation: во время живого прогона урока shared-case skills не должны перезаписывать `shared_case/outputs/**`, потому что эта папка должна оставаться эталонной.
+- Impact: если урок пишет runtime-артефакты в `shared_case/outputs/**`, эталонные примеры смешиваются со следами конкретного прогона и начинают пачкать `workbench` и потенциально `clean`.
+- Proposed change: оставить `shared_case/outputs/**` как canonical examples, а runtime shared-case прогон сохранять в `shared_case/run_outputs/**`; затем обновить shared-case skills и flow-файлы на новый путь записи.
+- Priority: high
+- Status: implemented
+
+### 2026-04-03 XX:XX (captured)
+- Stage: shared case runtime path migration scope
+- Observation: для перехода на `shared_case/run_outputs/**` уже понятен точный пакет файлов, которые нужно править; без этого решение повиснет как абстрактная идея.
+- Impact: если не зафиксировать точный scope миграции, shared-case runtime продолжит писать в эталонную папку и проблема останется.
+- Proposed change: при следующей итерации обновить:
+  - shared-case skills:
+    - `.agents/skills/shared-case-intake/SKILL.md`
+    - `.agents/skills/shared-case-analysis/SKILL.md`
+    - `.agents/skills/shared-case-workflow/SKILL.md`
+    - `.agents/skills/shared-case-experiment/SKILL.md`
+    - `.agents/skills/task-register/SKILL.md`
+  - flow и orchestration docs:
+    - `workshop/dispatch-catalog.md`
+    - `workshop/shared-case-flow.md`
+    - `workshop/start-prompt-participant.md`
+    - `workshop/start-prompt-facilitator.md`
+    - `workshop/demo-run-through-script.md`
+    - `facilitator/facilitator-script.md`
+    - `facilitator/demo-script-by-minute.md`
+    - `facilitator/recovery-script.md`
+  - repo artifacts:
+    - добавить `shared_case/run_outputs/.gitkeep`
+    - решить, нужны ли ignore-правила для runtime-файлов внутри `shared_case/run_outputs/**`
+- Priority: high
+- Status: implemented
+
+### 2026-04-03 XX:XX (captured)
 - Stage: repo promotion / clean vs workbench
 - Observation: защита `clean`-ветки не должна опираться на `AGENTS.md`; реальный контроль нужен на уровне git-процесса и отбора изменений между `workbench` и `clean`.
 - Impact: если переносить изменения слишком широко или опираться только на инструкции, в `clean` легко уедут participant-run артефакты вместо реальных улучшений урока.
@@ -65,7 +99,7 @@ Purpose: фиксируем замечания по каркасу урока (�
   - короткий запуск урока для ведущего
   при этом полная логика режима остаётся в `start-prompt-participant.md` и `start-prompt-facilitator.md`.
 - Priority: high
-- Status: captured
+- Status: implemented
 
 ### 2026-04-02 15:XX (captured)
 - Stage: language policy / participant-facing copy
@@ -77,7 +111,7 @@ Purpose: фиксируем замечания по каркасу урока (�
   - технические англоязычные термины допускаются только как названия файлов, системных сущностей или неизбежных терминов Codex
   - отдельно проверить `AGENTS.md`, `workshop/dispatch-catalog.md`, стартовые prompts и flow-файлы на избыточные англицизмы
 - Priority: high
-- Status: captured
+- Status: partial
 
 ### 2026-04-02 15:XX (captured)
 - Stage: setup personalization continuity
@@ -87,7 +121,7 @@ Purpose: фиксируем замечания по каркасу урока (�
   - после сохранения `participant_setup.md` помощник использует имя участника дальше по уроку там, где это уместно;
   - обращение должно быть естественным и умеренным, без повторения имени в каждом сообщении.
 - Priority: medium
-- Status: captured
+- Status: implemented
 
 ### 2026-04-02 15:XX (captured)
 - Stage: setup explanation-style question
@@ -95,7 +129,7 @@ Purpose: фиксируем замечания по каркасу урока (�
 - Impact: открытый вопрос создаёт лишнее трение, а без явной привязки к дальнейшему поведению выбор стиля выглядит декоративным.
 - Proposed change: заменить свободный вопрос на выбор из 3 фиксированных стилей объяснения и добавить в инструкции правило, что помощник обязан подстраивать подачу под выбранный стиль.
 - Priority: high
-- Status: captured
+- Status: implemented
 
 ### 2026-04-02 15:XX (captured)
 - Stage: shared case transition phrasing
@@ -107,7 +141,7 @@ Purpose: фиксируем замечания по каркасу урока (�
   - отдельно сказать, какой именно артефакт появится на следующем шаге
   - не маскировать запуск следующего шага под нейтральную фразу `покажи следующий шаг`
 - Priority: high
-- Status: captured
+- Status: partial
 
 ### 2026-04-02 15:XX (captured)
 - Stage: upstream skill architecture
@@ -118,7 +152,7 @@ Purpose: фиксируем замечания по каркасу урока (�
   - их output contract = `сырой пакет данных для дальнейшей обработки`;
   - `shared-case-intake` и общий downstream pipeline должны уметь работать не только со стандартными `shared_case/inputs/*`, но и с таким подготовленным сырьевым пакетом.
 - Priority: high
-- Status: captured
+- Status: implemented
 
 ### 2026-04-02 15:XX (captured)
 - Stage: upstream skill questioning
@@ -130,7 +164,7 @@ Purpose: фиксируем замечания по каркасу урока (�
   - что сохранить в сырой пакет;
   - что человек должен быстро проверить перед передачей дальше.
 - Priority: high
-- Status: captured
+- Status: implemented
 
 ### 2026-04-02 15:XX (captured)
 - Stage: upstream skill run timing
@@ -140,7 +174,7 @@ Purpose: фиксируем замечания по каркасу урока (�
   - на этапе проектирования фиксируется только роль skill и общий contract входа;
   - конкретный экспорт, чат или файл указывается уже в момент реального запуска skill.
 - Priority: high
-- Status: captured
+- Status: implemented
 
 ### 2026-04-02 15:XX (captured)
 - Stage: post-validation practice check
@@ -151,7 +185,7 @@ Purpose: фиксируем замечания по каркасу урока (�
   - прогнать skill на одном реальном или тестовом входе
   - коротко зафиксировать, что сработало, что не сработало и что нужно поправить
 - Priority: high
-- Status: captured
+- Status: implemented
 
 ### 2026-04-03 00:XX (captured)
 - Stage: external intake strictness
@@ -163,7 +197,7 @@ Purpose: фиксируем замечания по каркасу урока (�
   - не переходить к причинам, выводам и красивой педагогической сборке
   - по возможности сохранять traceability между блоками результата и наблюдаемыми фрагментами входа
 - Priority: high
-- Status: captured
+- Status: partial
 
 ### 2026-04-03 00:XX (captured)
 - Stage: validation agent demonstration gap
@@ -175,7 +209,7 @@ Purpose: фиксируем замечания по каркасу урока (�
   - что итог собирается в единый `validation_report`;
   - по возможности сохранить trace-артефакт вроде `validation_trace.md` или `validation_state.md`, чтобы handoff внутри validation был видимым.
 - Priority: high
-- Status: captured
+- Status: implemented
 
 ## Entries
 
