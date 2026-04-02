@@ -32,6 +32,151 @@ Purpose: фиксируем замечания по каркасу урока (�
 - external scoring/export loop
 - selective cleanup or archival of fully outdated backlog entries
 
+### 2026-04-03 XX:XX (captured)
+- Stage: repo promotion / clean vs workbench
+- Observation: защита `clean`-ветки не должна опираться на `AGENTS.md`; реальный контроль нужен на уровне git-процесса и отбора изменений между `workbench` и `clean`.
+- Impact: если переносить изменения слишком широко или опираться только на инструкции, в `clean` легко уедут participant-run артефакты вместо реальных улучшений урока.
+- Proposed change: зафиксировать рабочий git-процесс:
+  - `workbench` используется для прогонов и discovery;
+  - после каждого прогона изменения делятся на `lesson improvements` и `run artifacts`;
+  - в `clean` переносятся только точечные коммиты или файлы с улучшениями урока;
+  - полный `merge workbench -> clean` не использовать.
+- Priority: high
+- Status: captured
+
+### 2026-04-03 XX:XX (captured)
+- Stage: git hygiene / local run artifacts
+- Observation: в `workbench` отсутствовал `.gitignore`, поэтому participant-specific файлы и служебный мусор (`participants/<real-user>/**`, `.DS_Store`) сразу попадали в `git status`.
+- Impact: повышается риск случайного коммита локальных lesson-run данных и мусора.
+- Proposed change: добавить базовый repo-level `.gitignore` для:
+  - `.DS_Store`
+  - `participants/*` с исключениями для `participants/examples/**` и `participants/templates/**`
+  - типовых skill-run артефактов вроде `raw_packet.md`, `validation_trace.md`, `validation_state.md`
+  при этом не скрывать новые `SKILL.md`, чтобы потенциальные улучшения lesson runtime оставались видимыми.
+- Priority: high
+- Status: implemented
+
+### 2026-04-02 15:XX (captured)
+- Stage: lesson entrypoint UX
+- Observation: для живого запуска урока нужны ещё более короткие participant-facing входные команды уровня `запусти урок в participant mode` / `запусти урок в facilitator mode`, а не только длинные стартовые prompts.
+- Impact: без короткого входа старт урока остаётся слишком техническим и тяжёлым для реального запуска.
+- Proposed change: добавить в dispatch layer два канонических верхнеуровневых entrypoint-action:
+  - короткий запуск урока для участника
+  - короткий запуск урока для ведущего
+  при этом полная логика режима остаётся в `start-prompt-participant.md` и `start-prompt-facilitator.md`.
+- Priority: high
+- Status: captured
+
+### 2026-04-02 15:XX (captured)
+- Stage: language policy / participant-facing copy
+- Observation: в participant-facing и facilitator-facing слое осталось слишком много англицизмов (`entrypoint`, `dispatch`, `mode`, `skill`, `runtime` и т.д.), хотя урок ведётся на русском и должен звучать естественно.
+- Impact: англицизмы повышают когнитивную нагрузку, делают объяснение менее естественным и ухудшают восприятие урока русскоязычной аудиторией.
+- Proposed change: зафиксировать явное языковое правило:
+  - participant-facing и facilitator-facing коммуникация по умолчанию на русском
+  - англицизмы заменяются русскими эквивалентами везде, где это не ломает техническую точность
+  - технические англоязычные термины допускаются только как названия файлов, системных сущностей или неизбежных терминов Codex
+  - отдельно проверить `AGENTS.md`, `workshop/dispatch-catalog.md`, стартовые prompts и flow-файлы на избыточные англицизмы
+- Priority: high
+- Status: captured
+
+### 2026-04-02 15:XX (captured)
+- Stage: setup personalization continuity
+- Observation: после того как имя участника собрано на этапе setup, помощник дальше не использует его в обращении, из-за чего вопрос про имя выглядит формальным и неработающим.
+- Impact: персонализация урока ощущается непоследовательной, а собранный контекст не используется в коммуникации.
+- Proposed change: добавить в participant-facing инструкции правило:
+  - после сохранения `participant_setup.md` помощник использует имя участника дальше по уроку там, где это уместно;
+  - обращение должно быть естественным и умеренным, без повторения имени в каждом сообщении.
+- Priority: medium
+- Status: captured
+
+### 2026-04-02 15:XX (captured)
+- Stage: setup explanation-style question
+- Observation: вопрос про предпочтительный формат объяснений не должен быть открытым; лучше предложить 3 понятных варианта и потом реально следовать выбранному стилю в ходе урока.
+- Impact: открытый вопрос создаёт лишнее трение, а без явной привязки к дальнейшему поведению выбор стиля выглядит декоративным.
+- Proposed change: заменить свободный вопрос на выбор из 3 фиксированных стилей объяснения и добавить в инструкции правило, что помощник обязан подстраивать подачу под выбранный стиль.
+- Priority: high
+- Status: captured
+
+### 2026-04-02 15:XX (captured)
+- Stage: shared case transition phrasing
+- Observation: фраза вроде `Сохрани и покажи следующий шаг` описана некорректно: она скрывает, что помощник фактически уже выполняет следующий шаг, и не объясняет, что именно произойдёт дальше.
+- Impact: переходы между шагами цепочки выглядят размыто; участник не понимает, где заканчивается сохранение артефакта и где начинается следующий этап.
+- Proposed change: для всей shared-case цепочки заменить такие переходы на более точные формулировки:
+  - отдельно подтвердить сохранение текущего артефакта
+  - отдельно назвать следующий этап
+  - отдельно сказать, какой именно артефакт появится на следующем шаге
+  - не маскировать запуск следующего шага под нейтральную фразу `покажи следующий шаг`
+- Priority: high
+- Status: captured
+
+### 2026-04-02 15:XX (captured)
+- Stage: upstream skill architecture
+- Observation: `telegram-digest` и `review-monitor` не должны производить финальные полезные выводы; по целевой архитектуре они должны собирать и нормализовать сырой пакет данных, который потом обрабатывает основная цепочка skills.
+- Impact: если эти skills вести как самостоятельные "финальные" преобразователи, ломается общая логика пайплайна и дублируется работа `shared-case-intake` и следующих шагов.
+- Proposed change: зафиксировать архитектурное правило:
+  - `telegram-digest` и `review-monitor` — это входные skills сбора сырья;
+  - их output contract = `сырой пакет данных для дальнейшей обработки`;
+  - `shared-case-intake` и общий downstream pipeline должны уметь работать не только со стандартными `shared_case/inputs/*`, но и с таким подготовленным сырьевым пакетом.
+- Priority: high
+- Status: captured
+
+### 2026-04-02 15:XX (captured)
+- Stage: upstream skill questioning
+- Observation: для `telegram-digest` и `review-monitor` список вопросов не должен быть длинным и "продуктовым", потому что на этом этапе мы собираем только сырой пакет данных.
+- Impact: длинный список вопросов создаёт лишнюю тяжесть и уводит участника в преждевременное проектирование конечного результата.
+- Proposed change: сократить participant-facing вопросы для upstream skills до минимального набора:
+  - источник данных;
+  - период или объём выборки, если это важно;
+  - что сохранить в сырой пакет;
+  - что человек должен быстро проверить перед передачей дальше.
+- Priority: high
+- Status: captured
+
+### 2026-04-02 15:XX (captured)
+- Stage: upstream skill run timing
+- Observation: на этапе выбора и проектирования upstream skill не нужно спрашивать про конкретный чат, конкретный экспорт или конкретный файл выгрузки, если сами данные будут переданы только в момент реального запуска skill.
+- Impact: участнику задаются лишние операционные вопросы слишком рано, и create/adapt stage смешивается с runtime шагом.
+- Proposed change: для простых upstream skills разделить:
+  - на этапе проектирования фиксируется только роль skill и общий contract входа;
+  - конкретный экспорт, чат или файл указывается уже в момент реального запуска skill.
+- Priority: high
+- Status: captured
+
+### 2026-04-02 15:XX (captured)
+- Stage: post-validation practice check
+- Observation: после того как skill создан и провалидирован, участнику полезно по возможности проверить его на практике, а не останавливаться на spec и validation report.
+- Impact: без практического прогона этап create/adapt может ощущаться слишком теоретическим, а участник не видит, работает ли skill на реальном входе.
+- Proposed change: добавить после validation дополнительный шаг или явную опцию:
+  - `проверь skill на практике`
+  - прогнать skill на одном реальном или тестовом входе
+  - коротко зафиксировать, что сработало, что не сработало и что нужно поправить
+- Priority: high
+- Status: captured
+
+### 2026-04-03 00:XX (captured)
+- Stage: external intake strictness
+- Observation: при прогоне внешнего сырого пакета через intake помощник слишком легко подтягивает накопленный контекст репозитория и предыдущего разговора, из-за чего `intake` соскальзывает в ранний `analysis` и начинает "достраивать" картину вместо простой структуризации текущего входа.
+- Impact: шаг `intake` теряет чистоту, появляются домыслы и хардкод из прошлого контекста, а downstream-цепочка получает уже частично интерпретированный материал.
+- Proposed change: для внешних сырьевых пакетов добавить более жёсткий режим или отдельный intake-skill с правилами:
+  - использовать только текущий `raw_packet`
+  - не опираться на предыдущие shared-case outputs и прошлый conversational context
+  - не переходить к причинам, выводам и красивой педагогической сборке
+  - по возможности сохранять traceability между блоками результата и наблюдаемыми фрагментами входа
+- Priority: high
+- Status: captured
+
+### 2026-04-03 00:XX (captured)
+- Stage: validation agent demonstration gap
+- Observation: `validation-orchestrator` уже описан как кастомный агент и связан с несколькими validation skills, но в уроке это пока не показывается участнику как реальный агентный запуск; со стороны UX validation всё ещё выглядит просто как “ещё одна проверка”.
+- Impact: участник не видит разницу между skill и агентом-координатором, а одна из важных идей hybrid-архитектуры остаётся скрытой.
+- Proposed change: добавить в lesson flow и participant/facilitator guidance явную демонстрацию:
+  - что на этапе validation запускается именно `validation-orchestrator`;
+  - что он последовательно вызывает несколько validation skills;
+  - что итог собирается в единый `validation_report`;
+  - по возможности сохранить trace-артефакт вроде `validation_trace.md` или `validation_state.md`, чтобы handoff внутри validation был видимым.
+- Priority: high
+- Status: captured
+
 ## Entries
 
 ### 2026-04-02 14:XX (captured)

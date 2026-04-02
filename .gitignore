@@ -1,0 +1,13 @@
+.DS_Store
+
+# Participant-specific lesson runs should stay local/workbench-only.
+participants/*
+!participants/examples/
+!participants/examples/**
+!participants/templates/
+!participants/templates/**
+
+# Common runtime artifacts produced during local skill runs.
+.agents/skills/*/raw_packet.md
+.agents/skills/*/validation_trace.md
+.agents/skills/*/validation_state.md
