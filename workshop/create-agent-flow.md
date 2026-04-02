@@ -1,11 +1,13 @@
-# Create or Adapt Agent Flow
+# Create or Adapt Skill Flow
+
+Use [create-skill-flow.md](/Users/Igor/DemoHAI_V1/workshop/create-skill-flow.md) as the canonical file for this stage.
 
 Goal: participants either:
-1. create one elective agent from a template,
-2. or adapt an existing elective agent to their own context.
+1. create one elective skill from a template,
+2. or adapt an existing skill scenario to their own context.
 
 Required outputs:
-- agent spec,
+- skill spec,
 - tool or integration assumptions,
 - guardrails,
 - validation report,

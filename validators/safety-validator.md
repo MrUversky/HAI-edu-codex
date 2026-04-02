@@ -4,7 +4,7 @@
 You review safety, guardrails, permissions, and realistic integration boundaries.
 
 ## Check
-- Does the agent claim access it does not have?
+- Does the skill claim access it does not have?
 - Are destructive or sensitive actions blocked or gated?
 - Are secrets, personal data, or business-sensitive outputs handled safely?
 - Are guardrails present for input, tool use, and output where needed?

@@ -1,5 +1,8 @@
 # Agent Systems Guide (March 2026, workshop edition)
 
+Implementation note for this repo:
+the lesson still teaches agentic roles and handoffs, but the canonical Codex runtime format in this repository is now `skills` in `.agents/skills/`.
+
 This guide is a workshop-adapted synthesis grounded in official GitHub-visible materials from:
 - OpenAI Agents SDK (`openai/openai-agents-python`)
 - Anthropic Claude Cookbooks (`anthropics/claude-cookbooks`)
@@ -9,8 +12,8 @@ Where this file gives a recommendation for **this workshop architecture**, that 
 
 ## What is an agent in practical terms?
 
-For this workshop, an agent is not just any prompt.
-An agent has:
+For this workshop, an agentic role is not just any prompt.
+An agentic role has:
 1. a role
 2. a job to be done
 3. known inputs
@@ -96,7 +99,7 @@ This is better for teaching and recovery.
 ## Structured outputs and evals
 
 Across OpenAI and Anthropic materials, structured outputs and evals are not optional if you want reliable agent systems.
-Every serious workshop agent should be evaluable on at least:
+Every serious workshop skill should be evaluable on at least:
 - clarity
 - usefulness
 - scope discipline

@@ -1,12 +1,19 @@
 # Mini Practice Flow
 
-Goal: participants touch the mechanics before switching to their own context.
+Status: optional legacy extension, not part of the core `v1` lesson path after the skill migration.
 
-Format:
-- use a small mini-case,
+Use this only when:
+- the facilitator wants one extra mini-case after the shared case,
+- the group did not run the shared case hands-on,
+- or an additional practice beat is needed outside the main lesson path.
+
+If used, keep it bounded:
+- use one small mini-case,
 - run one small transformation,
 - inspect the output,
 - discuss what changed and why.
 
-Principle:
-The participant should first feel, 'I touched the mechanism myself,' before being asked to map it to their own work.
+Core `v1` lesson path goes directly from:
+- `shared case hands-on`
+- to `architecture unpacking`
+- to `create or adapt skill`

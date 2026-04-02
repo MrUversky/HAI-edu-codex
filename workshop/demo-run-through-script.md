@@ -7,10 +7,10 @@ Use this script to run one complete workshop path inside Codex without improvisi
 
 ```text
 Read README.md, AGENTS.md and WORKSHOP_BUILD_TRACKER.md first.
-Then read the files in workshop/ in the intended order.
+Then read the files in workshop/ in the intended order, starting with workshop/dispatch-catalog.md.
 Act as a workshop guide.
 Do not jump to my personal use case too early.
-First help me orient myself, then move me through the shared case, then mini-practice, then create/adapt-agent, then validation, and only then personal next step.
+First help me orient myself, then move me through the shared case hands-on, then architecture unpacking, then create/adapt-skill, then validation, and only then personal next step.
 Be practical, concise, and file-oriented.
 Always tell me which file we are using.
 ```
@@ -36,54 +36,45 @@ Ask one question at a time and create participants/demo_user/participant_setup.m
 Ask Codex:
 
 ```text
-Read workshop/shared-case-flow.md and the files in shared_case/inputs/.
-Then explain what each core agent should do before showing me the prepared outputs in shared_case/outputs/.
+Read workshop/shared-case-flow.md, workshop/dispatch-catalog.md, .agents/skills/shared-case-*/SKILL.md, .agents/skills/task-register/SKILL.md and the files in shared_case/inputs/.
+Then run the shared-case skill chain with me step by step, showing a draft first and saving only approved artifacts.
 ```
 
 ### Step 4. Architecture unpacking
 Ask Codex:
 
 ```text
-Using agents/core/*.md and shared_case/outputs/*, explain why the workflow is split across four agents instead of one.
+Using workshop/architecture-unpacking-flow.md, .agents/skills/shared-case-*/SKILL.md, .agents/skills/task-register/SKILL.md and shared_case/outputs/*, explain why the workflow is split across several skills instead of one long chat.
 Keep it practical.
 ```
 
-### Step 5. Mini-practice
+### Step 5. Create or adapt skill
 Ask Codex:
 
 ```text
-Pick one file from practice/mini_cases/ and guide me through one small transformation only.
-Do not overcomplicate it.
+Read workshop/create-skill-flow.md, workshop/dispatch-catalog.md and .agents/skills/skill-builder/SKILL.md.
+Help me choose one skill scenario and then use practice/create_or_adapt_skill/skill_spec_template.md to draft a first version.
 ```
 
-### Step 6. Create or adapt agent
+### Step 6. Add integration or fallback notes if needed
 Ask Codex:
 
 ```text
-Read workshop/create-agent-flow.md, practice/create_or_adapt_agent/task_options.md and agents/elective/*.
-Help me choose one elective agent to adapt.
-Then use practice/create_or_adapt_agent/agent_spec_template.md to draft a first version.
+If my skill needs an external system, use practice/create_or_adapt_skill/integration_stub_template.md and help me document the safest fallback.
 ```
 
-### Step 7. Add stub integration if needed
+### Step 7. Validation
 Ask Codex:
 
 ```text
-If my agent needs an external system, use one of the integration stub examples in practice/create_or_adapt_agent/stubs/ and help me adapt it safely.
+Use workshop/dispatch-catalog.md, .agents/skills/validate-skill/SKILL.md and .codex/agents/validation-orchestrator.toml to validate my created skill and produce a validation report.
 ```
 
-### Step 8. Validation
+### Step 8. Personal next step
 Ask Codex:
 
 ```text
-Run the evaluation sequence from evals/run_evaluation_flow.md against my created_or_adapted_agent.md and produce a validation report.
-```
-
-### Step 9. Personal next step
-Ask Codex:
-
-```text
-Now switch to workshop/personal-next-step-flow.md.
+Now switch to workshop/personal-next-step-flow.md and .agents/skills/personal-next-step/SKILL.md.
 Use participants/templates/personal_next_step_template.md and participants/templates/final_action_card_template.md.
 Help me identify one realistic next step only.
 ```

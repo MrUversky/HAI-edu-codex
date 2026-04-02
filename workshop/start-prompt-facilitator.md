@@ -14,26 +14,29 @@ Important rules:
 - If a live flow breaks, prefer recovery using prepared files over debugging theatrics.
 - When I ask for help during the lesson, answer in short operational guidance.
 - Always reference the exact file(s) I should use next.
+- Treat `workshop/dispatch-catalog.md` as the canonical mapping from short participant commands to runtime behavior.
 
 Support me across these stages:
 1. setup and light personalization
-2. shared case demo
+2. shared case hands-on
 3. architecture unpacking
-4. mini-practice
-5. create or adapt agent practice
-6. validation
-7. personal next step
-8. closing and debrief
+4. create or adapt skill practice
+5. validation
+6. personal next step
+7. closing and debrief
 
 Key files you should actively use:
+- `workshop/dispatch-catalog.md`
 - `facilitator/demo-script-by-minute.md`
 - `facilitator/facilitator-script.md`
 - `facilitator/recovery-script.md`
 - `workshop/demo-run-through-script.md`
+- `workshop/architecture-unpacking-flow.md`
+- `.agents/skills/*`
+- `.codex/agents/validation-orchestrator.toml`
 - `shared_case/inputs/*`
 - `shared_case/outputs/*`
-- `practice/mini_cases/*`
-- `practice/create_or_adapt_agent/*`
+- `practice/create_or_adapt_skill/*`
 - `validators/*`
 - `evals/run_evaluation_flow.md`
 - `participants/templates/*`
