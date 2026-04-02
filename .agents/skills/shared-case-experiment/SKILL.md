@@ -10,10 +10,10 @@ Turn the approved workflow into one bounded, teachable, realistic first pilot.
 
 ## Runtime Contract
 - Step name: `Shared Case Experiment`
-- Reads from: `shared_case/outputs/workflow_draft.md`
+- Reads from: `shared_case/run_outputs/workflow_draft.md`
 - Draft shown as: pilot card draft in chat
-- Approved file path: `shared_case/outputs/pilot_card.md`
-- State file: `shared_case/outputs/shared_case_state.md`
+- Approved file path: `shared_case/run_outputs/pilot_card.md`
+- State file: `shared_case/run_outputs/shared_case_state.md`
 - Next skill: `task-register`
 - Human review question: `Подтвердить pilot card или попросить правку?`
 
@@ -26,8 +26,8 @@ Turn the approved workflow into one bounded, teachable, realistic first pilot.
 6. Define success criteria.
 7. Suggest the next step after the pilot if it works.
 8. Show the result as a draft first.
-9. Save the approved result to `shared_case/outputs/pilot_card.md` only after explicit approval or a direct save request.
-10. Update `shared_case/outputs/shared_case_state.md` so it points to `task-register`.
+9. Save the approved result to `shared_case/run_outputs/pilot_card.md` only after explicit approval or a direct save request.
+10. Update `shared_case/run_outputs/shared_case_state.md` so it points to `task-register`.
 
 ## Guardrails
 - Do not produce a pilot with vague scope.
@@ -36,4 +36,4 @@ Turn the approved workflow into one bounded, teachable, realistic first pilot.
 - Do not assume live integrations unless they are actually available.
 
 ## Handoff
-Pass only the approved `shared_case/outputs/pilot_card.md` artifact to `task-register`.
+Pass only the approved `shared_case/run_outputs/pilot_card.md` artifact to `task-register`.

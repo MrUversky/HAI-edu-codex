@@ -13,6 +13,7 @@ Do not jump to my personal use case too early.
 First help me orient myself, then move me through the shared case hands-on, then architecture unpacking, then create/adapt-skill, then validation, and only then personal next step.
 Be practical, concise, and file-oriented.
 Always tell me which file we are using.
+Use Russian in participant-facing guidance.
 ```
 
 ## Recommended run order
@@ -37,14 +38,14 @@ Ask Codex:
 
 ```text
 Read workshop/shared-case-flow.md, workshop/dispatch-catalog.md, .agents/skills/shared-case-*/SKILL.md, .agents/skills/task-register/SKILL.md and the files in shared_case/inputs/.
-Then run the shared-case skill chain with me step by step, showing a draft first and saving only approved artifacts.
+Then run the shared-case skill chain with me step by step, showing a draft first and saving only approved artifacts to shared_case/run_outputs/.
 ```
 
 ### Step 4. Architecture unpacking
 Ask Codex:
 
 ```text
-Using workshop/architecture-unpacking-flow.md, .agents/skills/shared-case-*/SKILL.md, .agents/skills/task-register/SKILL.md and shared_case/outputs/*, explain why the workflow is split across several skills instead of one long chat.
+Using workshop/architecture-unpacking-flow.md, .agents/skills/shared-case-*/SKILL.md, .agents/skills/task-register/SKILL.md and shared_case/run_outputs/*, explain why the workflow is split across several skills instead of one long chat.
 Keep it practical.
 ```
 
@@ -68,9 +69,17 @@ Ask Codex:
 
 ```text
 Use workshop/dispatch-catalog.md, .agents/skills/validate-skill/SKILL.md and .codex/agents/validation-orchestrator.toml to validate my created skill and produce a validation report.
+Make the validation agent visible and show a short validation trace before the final report.
 ```
 
-### Step 8. Personal next step
+### Step 8. Practice check
+Ask Codex:
+
+```text
+If the skill is ready, run one practical check on one real or test input and save the skill-specific runtime artifact only after approval.
+```
+
+### Step 9. Personal next step
 Ask Codex:
 
 ```text

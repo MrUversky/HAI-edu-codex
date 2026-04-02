@@ -1,6 +1,6 @@
 ---
 name: task-register
-description: Turn an approved shared-case pilot card into a concrete task register for the first sprint. Use when the user asks to turn the pilot into tasks, build the first sprint plan, or produce shared_case/outputs/task_register.md.
+description: Turn an approved shared-case pilot card into a concrete task register for the first sprint. Use when the user asks to turn the pilot into tasks, build the first sprint plan, or produce task_register.md for the live shared-case run.
 ---
 
 # Task Register
@@ -11,16 +11,16 @@ Convert an approved pilot card into a bounded first-sprint task register.
 ## Runtime Contract
 - Step name: `Task Register`
 - Reads from:
-  - `shared_case/outputs/pilot_card.md`
-  - optional `shared_case/outputs/workflow_draft.md`
+  - `shared_case/run_outputs/pilot_card.md`
+  - optional `shared_case/run_outputs/workflow_draft.md`
 - Draft shown as: task register draft in chat
-- Approved file path: `shared_case/outputs/task_register.md`
-- State file: `shared_case/outputs/shared_case_state.md`
+- Approved file path: `shared_case/run_outputs/task_register.md`
+- State file: `shared_case/run_outputs/shared_case_state.md`
 - Next step: `architecture unpacking`
 - Human review question: `Подтвердить task register или попросить правку?`
 
 ## Procedure
-1. Read the approved `pilot_card.md`.
+1. Read the approved `pilot_card.md` from `shared_case/run_outputs/`.
 2. Restate the first sprint goal in one sentence.
 3. Break the pilot into a small set of concrete first-sprint tasks.
 4. Separate in-scope tasks from out-of-scope tasks.
@@ -29,8 +29,8 @@ Convert an approved pilot card into a bounded first-sprint task register.
 7. Define the first review checkpoint.
 8. Restate sprint success criteria in observable terms.
 9. Show the result as a draft first.
-10. Save the approved result to `shared_case/outputs/task_register.md` only after explicit approval or a direct save request.
-11. Update `shared_case/outputs/shared_case_state.md` so the next stage points to `architecture unpacking`.
+10. Save the approved result to `shared_case/run_outputs/task_register.md` only after explicit approval or a direct save request.
+11. Update `shared_case/run_outputs/shared_case_state.md` so the next stage points to `architecture unpacking`.
 
 ## Output format
 Return these sections:

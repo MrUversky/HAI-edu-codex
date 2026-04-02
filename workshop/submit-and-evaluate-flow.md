@@ -1,14 +1,15 @@
 # Submit and Evaluate Flow
 
-Stage framing:
-- Current stage: `submit and evaluate`
-- What is already done: setup, shared case, architecture unpacking, created skill, validation, personal next step
-- What we are doing now: assemble the final participant package
-- Expected artifact: one complete submission package with a validation result
+Подача этапа:
+- Текущий этап: `submit and evaluate`
+- Что уже сделано: setup, общий кейс, разбор архитектуры, созданный навык, validation, личный следующий шаг
+- Что делаем сейчас: собираем финальный пакет участника
+- Ожидаемый артефакт: один complete submission package с результатом validation
 
 Final participant package should include:
 - participant setup,
 - created or adapted skill,
+- validation trace,
 - validation report,
 - final action card.
 

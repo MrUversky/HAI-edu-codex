@@ -34,12 +34,19 @@ Guide the participant through one bounded skill design and produce a draft skill
    - the desired output
    - the human review point
    - whether the workshop should use direct input, export, guided integration, or a stub
-5. Use the selected scenario guide to draft the skill.
-6. Add fallback or integration notes only when needed.
-7. Keep the first version narrow and ready for validation.
+5. For `telegram-digest` and `review-monitor`, keep the scope narrower:
+   - treat them as upstream raw-data collectors
+   - ask only for the minimum design information
+   - do not ask for the concrete export or runtime file yet
+   - make the output a raw packet for downstream processing
+6. Use the selected scenario guide to draft the skill.
+7. Add fallback or integration notes only when needed.
+8. Keep the first version narrow and ready for validation.
+9. After validation, suggest one practical test run on a real or test input.
 
 ## Guardrails
 - Do not offer a broad “build anything” flow.
 - Do not force live integrations by default.
 - Do not ask the participant to write code unless they explicitly want the optional technical layer.
+- Do not confuse skill design with the later runtime step where the actual input is provided.
 - Do not skip validation.

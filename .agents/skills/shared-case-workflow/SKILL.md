@@ -10,10 +10,10 @@ Convert the approved signal map into a practical, teachable, bounded workflow fo
 
 ## Runtime Contract
 - Step name: `Shared Case Workflow`
-- Reads from: `shared_case/outputs/signal_map.md`
+- Reads from: `shared_case/run_outputs/signal_map.md`
 - Draft shown as: workflow draft in chat
-- Approved file path: `shared_case/outputs/workflow_draft.md`
-- State file: `shared_case/outputs/shared_case_state.md`
+- Approved file path: `shared_case/run_outputs/workflow_draft.md`
+- State file: `shared_case/run_outputs/shared_case_state.md`
 - Next skill: `shared-case-experiment`
 - Human review question: `Подтвердить workflow draft или попросить правку?`
 
@@ -26,8 +26,8 @@ Convert the approved signal map into a practical, teachable, bounded workflow fo
 6. Explain what makes the workflow repeatable.
 7. Keep the workflow bounded enough for one workshop session.
 8. Show the result as a draft first.
-9. Save the approved result to `shared_case/outputs/workflow_draft.md` only after explicit approval or a direct save request.
-10. Update `shared_case/outputs/shared_case_state.md` so it points to `shared-case-experiment`.
+9. Save the approved result to `shared_case/run_outputs/workflow_draft.md` only after explicit approval or a direct save request.
+10. Update `shared_case/run_outputs/shared_case_state.md` so it points to `shared-case-experiment`.
 
 ## Guardrails
 - Do not overengineer the workflow.
@@ -36,4 +36,4 @@ Convert the approved signal map into a practical, teachable, bounded workflow fo
 - Do not assume integrations unless they are explicitly available or clearly marked as stubs.
 
 ## Handoff
-Pass only the approved `shared_case/outputs/workflow_draft.md` artifact to `shared-case-experiment`.
+Pass only the approved `shared_case/run_outputs/workflow_draft.md` artifact to `shared-case-experiment`.

@@ -5,6 +5,7 @@
 2. Switch to the prepared files in `shared_case/outputs/`.
 3. Explain the logic of the flow, not the broken UI.
 4. Continue the lesson from architecture unpacking or create/adapt-skill.
+5. Do not treat `shared_case/outputs/` as the live output path; it is recovery material only.
 
 ## If participants are overwhelmed
 - shorten the step

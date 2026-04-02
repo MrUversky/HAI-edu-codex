@@ -5,3 +5,11 @@ participants/*
 !participants/examples/**
 !participants/templates/
 !participants/templates/**
+
+# Common runtime artifacts produced during local skill runs.
+.agents/skills/*/raw_packet.md
+.agents/skills/*/validation_report.md
+.agents/skills/*/validation_trace.md
+.agents/skills/*/validation_state.md
+shared_case/run_outputs/*
+!shared_case/run_outputs/.gitkeep

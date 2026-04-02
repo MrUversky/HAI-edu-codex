@@ -1,7 +1,7 @@
 # Participant Setup
 
-Name: Demo User
-Role / function: Operations / internal enablement
-AI familiarity: Uses AI occasionally for summaries and drafts, but not yet for structured workflows
-Preferred explanation style: Short, practical, with examples
-Main goal for this lesson: Understand how skill-based workflows work and identify one realistic next step for real work
+Имя: Demo User
+Роль / функция: Operations / internal enablement
+Уровень знакомства с AI: средний
+Стиль объяснений: с примерами на каждом этапе
+Главная цель на этот урок: Понять, как работают skill-based workflows, и выбрать один реалистичный следующий шаг для реальной работы

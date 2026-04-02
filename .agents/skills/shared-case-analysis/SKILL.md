@@ -10,10 +10,10 @@ Turn the approved shared-case working set into a clear map of signals, tensions,
 
 ## Runtime Contract
 - Step name: `Shared Case Analysis`
-- Reads from: `shared_case/outputs/structured_inputs.md`
+- Reads from: `shared_case/run_outputs/structured_inputs.md`
 - Draft shown as: signal map draft in chat
-- Approved file path: `shared_case/outputs/signal_map.md`
-- State file: `shared_case/outputs/shared_case_state.md`
+- Approved file path: `shared_case/run_outputs/signal_map.md`
+- State file: `shared_case/run_outputs/shared_case_state.md`
 - Next skill: `shared-case-workflow`
 - Human review question: `Подтвердить signal map или попросить правку?`
 
@@ -25,8 +25,8 @@ Turn the approved shared-case working set into a clear map of signals, tensions,
 5. Explain why those bottlenecks matter.
 6. Recommend a design focus without building the workflow yet.
 7. Show the result as a draft first.
-8. Save the approved result to `shared_case/outputs/signal_map.md` only after explicit approval or a direct save request.
-9. Update `shared_case/outputs/shared_case_state.md` so it points to `shared-case-workflow`.
+8. Save the approved result to `shared_case/run_outputs/signal_map.md` only after explicit approval or a direct save request.
+9. Update `shared_case/run_outputs/shared_case_state.md` so it points to `shared-case-workflow`.
 
 ## Guardrails
 - Do not invent evidence that is not present.
@@ -35,4 +35,4 @@ Turn the approved shared-case working set into a clear map of signals, tensions,
 - Do not overstate causality.
 
 ## Handoff
-Pass only the approved `shared_case/outputs/signal_map.md` artifact to `shared-case-workflow`.
+Pass only the approved `shared_case/run_outputs/signal_map.md` artifact to `shared-case-workflow`.

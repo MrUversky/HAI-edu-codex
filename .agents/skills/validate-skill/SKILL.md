@@ -18,9 +18,13 @@ Internal orchestrator:
   - `SKILL.md`
   - optional `references/` or `scripts/`
   - optional integration or stub notes if present
-- Draft shown as: concise findings summary in chat
-- Approved file path: `.agents/skills/<skill-name>/validation_report.md`
-- Human review question: `Сохранить validation report или сначала внести правки?`
+- Draft shown as:
+  - запуск агента валидации и краткий итог в чате
+  - короткий trace по шагам проверки
+- Approved file paths:
+  - `.agents/skills/<skill-name>/validation_trace.md`
+  - `.agents/skills/<skill-name>/validation_report.md`
+- Human review question: `Сохранить trace и validation report или сначала внести правки?`
 
 ## Procedure
 1. Identify the target skill folder.
@@ -33,9 +37,12 @@ Internal orchestrator:
    - architectural fit
    - canonical skill layout
    - required artifacts and handoff pattern
-5. Produce one structured validation report with verdict, strengths, required revisions, and total score.
-6. Show the report as a draft first.
-7. Save the approved report to `.agents/skills/<skill-name>/validation_report.md` only after explicit approval or a direct save request.
+5. Produce:
+   - one short validation trace with each internal check and its verdict,
+   - one structured validation report with verdict, strengths, required revisions, and total score.
+6. Show the trace and report as a draft first.
+7. Save the approved trace to `.agents/skills/<skill-name>/validation_trace.md` only after explicit approval or a direct save request.
+8. Save the approved report to `.agents/skills/<skill-name>/validation_report.md` only after explicit approval or a direct save request.
 
 ## Required Checks
 - `SKILL.md` uses valid skill frontmatter with `name` and `description`.
@@ -45,4 +52,4 @@ Internal orchestrator:
 - The skill fits the lesson architecture and does not sprawl into a broad transformation.
 
 ## Handoff
-Use this skill as the participant-facing validation entrypoint. Treat `.codex/agents/validation-orchestrator.toml` as the internal runtime coordinator, and treat `validators/*` plus `evals/run_evaluation_flow.md` as source material for the evaluation logic.
+Use this skill as the participant-facing validation entrypoint. Tell the participant explicitly that the validation agent is starting, that it will run several checks in sequence, and that it will return both a short trace and a final report. Treat `.codex/agents/validation-orchestrator.toml` as the internal runtime coordinator, and treat `validators/*` plus `evals/run_evaluation_flow.md` as source material for the evaluation logic.

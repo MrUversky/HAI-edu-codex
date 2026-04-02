@@ -29,7 +29,7 @@ Goal:
 Run the shared-case skills through `shared-case-intake` and `shared-case-analysis`.
 Goal:
 - participants run the same steps locally
-- each step produces an approved artifact
+- each step produces an approved artifact in `shared_case/run_outputs/`
 
 ## 35–45 min
 Run `shared-case-workflow` and `shared-case-experiment`.
@@ -71,6 +71,7 @@ Use:
 - `.codex/agents/validation-orchestrator.toml`
 Goal:
 - every participant gets structured feedback, not vague praise
+- make the validation agent visible as one coordinator that runs several checks in sequence
 
 ## 105–118 min
 Switch to personal next step.
