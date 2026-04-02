@@ -5,19 +5,19 @@ Name: Demo User
 Role: Operations / internal enablement
 
 ## Selected path
-- adapted an existing elective agent
-- selected agent: Notion Sync Agent
+- adapted an existing skill scenario
+- selected skill: notion-sync
 
 ## Included artifacts
 - participant_setup.md
-- created_or_adapted_agent.md
+- `.agents/skills/notion-sync/SKILL.md`
 - integration_stub.md
 - validation_report.md
 - final_action_card.md
 
 ## Summary of work
-The participant adapted the Notion Sync Agent for internal workshop-planning workflows.
-The adapted version does not write to a live Notion workspace. It converts messy planning notes and requests into a Notion-ready table draft with:
+The participant adapted the Notion Sync skill scenario for internal workshop-planning workflows.
+The adapted version does not write to a live Notion workspace. It converts approved planning outputs into a Notion-ready table draft with:
 - normalized records
 - suggested fields
 - owner placeholders
@@ -34,5 +34,5 @@ The adapted version does not write to a live Notion workspace. It converts messy
 - `participants/examples/demo_user/participant_setup.md`
 - `participants/examples/demo_user/personal_next_step.md`
 - `participants/examples/demo_user/final_action_card.md`
-- `practice/create_or_adapt_agent/stubs/notion_stub_example.md`
+- `practice/create_or_adapt_skill/integration_stub_template.md`
 - `submissions/examples/demo_validation_report.md`

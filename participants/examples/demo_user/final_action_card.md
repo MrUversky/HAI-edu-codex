@@ -6,11 +6,11 @@ One realistic use case:
 Turn messy internal workshop-planning inputs into a structured planning brief and bounded pilot suggestion.
 
 What I would test first:
-Use the shared-case core flow on one real upcoming workshop planning packet and compare the result against my manual process.
+Use the shared-case skill chain plus a Notion-ready follow-up step on one real upcoming workshop planning packet and compare the result against my manual process.
 
 What I need to start:
 - one real packet of planning material
-- the core four agents
+- the five shared-case skills, including `task-register`
 - one validator pass
 - one human review checkpoint
 

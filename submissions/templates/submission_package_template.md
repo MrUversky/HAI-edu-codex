@@ -5,12 +5,12 @@ Name:
 Role:
 
 ## Selected path
-- created a new agent / adapted an existing one
-- selected elective agent:
+- created a new skill / adapted an existing one
+- selected skill scenario:
 
 ## Included artifacts
 - participant_setup.md
-- created_or_adapted_agent.md
+- `.agents/skills/<skill-name>/SKILL.md`
 - validation_report.md
 - final_action_card.md
 

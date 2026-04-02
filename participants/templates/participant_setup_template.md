@@ -2,6 +2,6 @@
 
 Name:
 Role / function:
-AI familiarity:
+AI familiarity (начинающий / средний / продвинутый):
 Preferred explanation style:
 Main goal for this lesson:
