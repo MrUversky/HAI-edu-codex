@@ -1,93 +1,93 @@
-# Facilitator Demo Script by Minute
+# Поминутный Сценарий Для Ведущего
 
-## 0–5 min
-Frame the lesson.
-Say explicitly:
-- this is not an AI-overview session
-- we will run a shared skill chain, understand it, then apply it
-- the final outcome is one realistic next step
+## 0–5 мин
+Задайте рамку урока.
+Скажите прямо:
+- это не обзор всех AI-инструментов
+- мы пройдём общую цепочку навыков, разберём её и только потом применим к себе
+- финальный результат урока — один реалистичный следующий шаг
 
-## 5–10 min
-Run setup and light personalization.
-Goal:
-- participant feels oriented
-- no personal business-case digging yet
+## 5–10 мин
+Проведите `setup` и лёгкую персонализацию.
+Цель:
+- участник чувствует себя сориентированным
+- никто не уходит в личный бизнес-кейс слишком рано
 
-## 10–15 min
-Explain the route of the lesson in one slide or one short verbal map.
+## 10–15 мин
+Объясните маршрут урока одним слайдом или короткой словесной схемой.
 Checkpoint:
-- participants know shared case comes before personal application
+- участники понимают, что общий кейс идёт раньше личного применения
 
-## 15–25 min
-Show the raw shared-case inputs.
-Use:
+## 15–25 мин
+Покажите сырые входы общего кейса.
+Используйте:
 - `shared_case/inputs/*`
-Goal:
-- make the chaos feel real
+Цель:
+- сделать хаос входов ощутимым и понятным
 
-## 25–35 min
-Run the shared-case skills through `shared-case-intake` and `shared-case-analysis`.
-Goal:
-- participants run the same steps locally
-- each step produces an approved artifact in `shared_case/run_outputs/`
+## 25–35 мин
+Запустите `shared-case-intake` и `shared-case-analysis`.
+Цель:
+- участники проходят те же шаги локально
+- каждый шаг даёт утверждённый артефакт в `shared_case/run_outputs/`
 
-## 35–45 min
-Run `shared-case-workflow` and `shared-case-experiment`.
-Goal:
-- participants see the full transformation from chaos to a bounded pilot
-- the chain feels like saved handoffs, not one long chat
+## 35–45 мин
+Запустите `shared-case-workflow` и `shared-case-experiment`.
+Цель:
+- участники видят полную трансформацию от хаоса к ограниченному пилоту
+- цепочка ощущается как сохранённые handoff-артефакты, а не как один длинный чат
 
-## 45–50 min
-Run `task-register`.
-Goal:
-- participants see the last hop from pilot concept to an operational first-sprint artifact
-- the shared case ends on `task_register.md`, not on `pilot_card.md`
+## 45–50 мин
+Запустите `task-register`.
+Цель:
+- участники видят последний переход от идеи пилота к рабочему артефакту первого спринта
+- общий кейс заканчивается на `task_register.md`, а не на `pilot_card.md`
 
-## 50–60 min
-Unpack the architecture.
-Explain:
-- why there are multiple skills
-- where human judgment stays
-- why this is more than one prompt
-- why `draft -> review -> approve -> save -> handoff` matters
+## 50–60 мин
+Разберите архитектуру.
+Объясните:
+- почему здесь несколько навыков
+- где остаётся человеческое решение
+- почему это больше, чем один хороший prompt
+- почему `draft -> review -> approve -> save -> handoff` имеет значение
 
-## 60–70 min
-Introduce create-or-adapt-skill practice.
-Use:
+## 60–70 мин
+Введите практику create/adapt skill.
+Используйте:
 - `.agents/skills/skill-builder/SKILL.md`
 - `practice/create_or_adapt_skill/task_options.md`
 - `practice/create_or_adapt_skill/skill_spec_template.md`
 - `practice/create_or_adapt_skill/integration_stub_template.md`
 
-## 70–95 min
-Participants create or adapt one skill.
-Facilitator rule:
-keep scope narrow; one source, one transformation, one useful output.
+## 70–95 мин
+Участники создают или адаптируют один навык.
+Правило для ведущего:
+держать scope узким: один источник, одно преобразование, один полезный выход.
 
-## 95–105 min
-Run validation.
-Use:
+## 95–105 мин
+Запустите validation.
+Используйте:
 - `.agents/skills/validate-skill/SKILL.md`
 - `.codex/agents/validation-orchestrator.toml`
-Goal:
-- every participant gets structured feedback, not vague praise
-- make the validation agent visible as one coordinator that runs several checks in sequence
+Цель:
+- каждый участник получает структурированную обратную связь, а не размытое одобрение
+- агент валидации виден как один координатор, который запускает несколько последовательных проверок
 
-## 105–118 min
-Switch to personal next step.
-Use:
+## 105–118 мин
+Переключитесь на личный следующий шаг.
+Используйте:
 - `participants/templates/personal_next_step_template.md`
 - `participants/templates/final_action_card_template.md`
-Goal:
-- identify one bounded real use case and one next step
+Цель:
+- выделить один ограниченный реальный use case и один следующий шаг
 
-## 118–120 min
-Close.
-Repeat:
-- one realistic use case
-- one next step
-- one action in the next 7 days
+## 118–120 мин
+Закройте урок.
+Повторите:
+- один реалистичный use case
+- один следующий шаг
+- одно действие в ближайшие 7 дней
 
-## Recovery switch points
-- If shared-case demo breaks: switch at 25–45 min to the prepared files in `shared_case/outputs/`.
-- If create/adapt scope explodes: intervene immediately at 65–95 min and force a smaller pilot.
+## Точки переключения в recovery
+- Если shared-case demo ломается: с 25-й по 45-ю минуту переключайтесь на prepared files из `shared_case/outputs/`.
+- Если create/adapt слишком расползается: сразу вмешивайтесь в интервале 65–95 минут и сужайте пилот.

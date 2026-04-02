@@ -1,125 +1,125 @@
-# Lesson Frame
+# Рамка Урока
 
-This file is the stable frame for the workshop.
-When the repo evolves, contributors should return to this file before changing flows, prompts, skills, or practice design.
+Этот файл задаёт стабильную рамку урока.
+Когда репозиторий меняется, к нему стоит возвращаться перед правкой flow-файлов, prompts, skills или practice design.
 
-## 1. Why this lesson exists
+## 1. Зачем нужен этот урок
 
-This lesson is not an AI-overview session and not a generic prompting class.
-It exists to help participants:
-1. see how skill-based workflows actually work in Codex,
-2. understand why this is more than one good prompt,
-3. touch the mechanics themselves,
-4. identify one realistic next step for their own work.
+Это не AI-overview session и не generic prompting class.
+Урок нужен, чтобы участники:
+1. увидели, как в Codex реально работают skill-based workflows
+2. поняли, почему это больше, чем один хороший prompt
+3. сами потрогали механику руками
+4. ушли с одним реалистичным следующим шагом для своей работы
 
-## 2. Core participant journey
+## 2. Базовый путь участника
 
-The intended learning path is:
+Ожидаемый learning path такой:
 
-1. **Observe** — run a shared case flow from chaos to structure.
-2. **Understand** — unpack roles, handoffs, guardrails, and workflow logic.
-3. **Create or adapt** — build or adapt one bounded skill.
-4. **Validate** — run a structured review pipeline.
-5. **Apply** — map the mechanism to one realistic personal use case.
-6. **Commit** — leave with one next step.
+1. **Observe** — пройти общий кейс от хаоса к структуре
+2. **Understand** — разобрать роли, handoff, guardrails и workflow logic
+3. **Create or adapt** — собрать или адаптировать один ограниченный навык
+4. **Validate** — пройти структурированную проверку
+5. **Apply** — привязать механизм к одному личному use case
+6. **Commit** — выйти с одним следующим шагом
 
-This order matters.
-Participants should not be pushed into deep personal use-case design too early.
+Этот порядок важен.
+Участников нельзя толкать в глубокое проектирование личного use case слишком рано.
 
-## 3. What success looks like
+## 3. Что считается успешным результатом
 
-The lesson is successful if a participant leaves with:
-- a practical mental model of how the skill chain works,
-- experience of running at least one part of the workflow hands-on,
-- one bounded use case or candidate scenario,
-- one realistic next step they could take after the lesson.
+Урок успешен, если участник уходит с:
+- практической mental model того, как работает skill chain
+- опытом hands-on прогона хотя бы части workflow
+- одним ограниченным use case или candidate scenario
+- одним реалистичным следующим шагом после урока
 
-A good outcome is not just: “that was impressive.”
-A good outcome is: “I understand the mechanism and I know what I could try next.”
+Плохой результат: “было впечатляюще”.
+Хороший результат: “я понимаю механизм и знаю, что могу попробовать дальше”.
 
-## 4. Main lesson promise
+## 4. Главное обещание урока
 
-The lesson should help participants see how AI can turn messy working inputs into a more manageable process — and then help them identify one realistic first scenario for their own context.
+Урок должен помочь участнику увидеть, как AI превращает messy working inputs в более управляемый процесс, а затем помогает найти один реалистичный первый сценарий для своего контекста.
 
-## 5. What this lesson is not
+## 5. Чем этот урок не является
 
-This lesson is **not**:
-- a full company AI strategy sprint,
-- a survey of all AI tools,
-- a deep GitHub training,
-- a generic prompt-hacks session,
-- a production integration bootcamp,
-- a fully autonomous agent engineering class.
+Этот урок **не**:
+- полный company AI strategy sprint
+- обзор всех AI-tools
+- глубокий GitHub-training
+- сессия с generic prompt-hacks
+- production integration bootcamp
+- курс по fully autonomous agent engineering
 
-## 6. Non-negotiable design principles
+## 6. Неподвижные принципы дизайна
 
-### A. Shared case before personal case
-The shared case is the main teaching object.
-Personal application comes after shared understanding and validation of one bounded skill idea.
+### A. Shared case раньше personal case
+Общий кейс — главный teaching object.
+Личное применение идёт только после общего понимания и validation одной ограниченной идеи навыка.
 
-### B. Structure before creativity
-Participants need a scaffold before open-ended design.
+### B. Structure раньше creativity
+Перед открытым дизайном участникам нужен scaffold.
 
-### C. One bounded next step beats broad ambition
-The lesson should move toward a realistic pilot, not a transformation fantasy.
+### C. Один bounded next step лучше широкой амбиции
+Урок должен вести к реалистичному пилоту, а не к transformation fantasy.
 
-### D. Human judgment stays visible
-The lesson should show where AI helps and where human ownership remains necessary.
+### D. Human judgment должен оставаться видимым
+Урок должен показывать, где помогает AI и где остаётся человеческое владение решением.
 
-### E. Validation is part of the lesson, not an optional extra
-Creation without validation is incomplete.
+### E. Validation — часть урока, а не опция
+Создание без validation — незавершённый путь.
 
-### F. Tool realism matters
-Live integrations are optional.
-Stub integrations are acceptable if labeled clearly.
-Fake realism is worse than explicit simulation.
+### F. Tool realism важен
+Live integrations опциональны.
+Stub integrations допустимы, если они помечены честно.
+Fake realism хуже, чем явная симуляция.
 
-## 7. What should remain true when the repo evolves
+## 7. Что должно оставаться истинным при развитии репозитория
 
-If new files or flows are added, these things should remain true:
-- participants are not overloaded too early,
-- the order of the journey stays intact,
-- the shared case remains central,
-- create/adapt-skill remains scoped,
-- validation remains mandatory,
-- personal next step stays realistic and specific.
+Если появляются новые файлы или flows, должно оставаться верным:
+- участники не перегружаются слишком рано
+- порядок пути не ломается
+- shared case остаётся центральным
+- create/adapt-skill остаётся ограниченным
+- validation остаётся обязательной
+- personal next step остаётся реалистичным и конкретным
 
-## 8. Signals that the lesson is drifting
+## 8. Сигналы, что урок уходит в сторону
 
-The lesson is drifting if:
-- participants are asked for a full business case in the first phase,
-- the lesson becomes mostly about tools instead of workflows,
-- the shared case becomes optional or shallow,
-- the create/adapt exercise becomes too broad,
-- validation is skipped or becomes ceremonial,
-- participants leave with many ideas but no next step,
-- the repo starts optimizing for technical cleverness instead of teaching clarity.
+Урок уходит в сторону, если:
+- у участников спрашивают полный бизнес-кейс в первой фазе
+- урок становится в основном про tools, а не про workflows
+- shared case становится опциональным или поверхностным
+- create/adapt упражнение становится слишком широким
+- validation пропускается или превращается в церемонию
+- участники уходят с кучей идей, но без следующего шага
+- репозиторий начинает оптимизироваться под техническую cleverness, а не под teaching clarity
 
-## 9. Priority order for decision-making
+## 9. Порядок приоритетов при спорных решениях
 
-When in doubt, prioritize in this order:
+Если есть сомнение, приоритизировать так:
 1. participant clarity
-2. lesson flow integrity
+2. цельность lesson flow
 3. bounded practice
-4. realism of the scenario
-5. technical elegance
+4. реалистичность сценария
+5. техническая элегантность
 
-## 10. The minimum final outputs we want
+## 10. Минимальные финальные артефакты
 
-By the end of the lesson, the participant should ideally have:
+К концу урока участник в идеале должен иметь:
 - `participant_setup.md`
-- one approved shared-case chain run or observed transformation
-- one created or adapted skill spec
-- one validation result
+- один утверждённый shared-case chain run или хотя бы разобранную observed transformation
+- один created or adapted skill spec
+- один validation result
 - `personal_next_step.md`
 - `final_action_card.md`
 
-## 11. How to use this file during future changes
+## 11. Как использовать этот файл при будущих изменениях
 
-Before changing flows, prompts, or practice design, ask:
-1. Does this change preserve the intended participant journey?
-2. Does it help participants understand and touch the mechanism?
-3. Does it protect the bounded scope of the lesson?
-4. Does it improve or weaken the chance that participants leave with one realistic next step?
+Перед правкой flow-файлов, prompts или practice design задайте 4 вопроса:
+1. Сохраняет ли это изменение intended participant journey?
+2. Помогает ли оно участнику понять и потрогать механику?
+3. Защищает ли оно bounded scope урока?
+4. Укрепляет ли оно шансы, что участник уйдёт с одним реалистичным следующим шагом?
 
-If the answer is unclear, the change probably needs revision.
+Если ответ неясен, изменение, скорее всего, требует revision.

@@ -1,10 +1,10 @@
-# Personal Next Step
+# Личный Следующий Шаг
 
-My role:
-Selected skill:
-My repeating work situation:
-Typical inputs:
-What I still do manually:
-What repeats enough to justify a first test:
-My one bounded first scenario:
-Why this is a good next step now:
+Моя роль:
+Выбранный навык:
+Моя повторяющаяся рабочая ситуация:
+Типичные входы:
+Что я всё ещё делаю вручную:
+Что повторяется достаточно часто для первого теста:
+Мой один ограниченный первый сценарий:
+Почему это хороший следующий шаг сейчас:

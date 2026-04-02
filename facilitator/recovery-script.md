@@ -1,18 +1,18 @@
-# Recovery Script
+# Сценарий Восстановления
 
-## If Codex or the repo flow breaks during demo
-1. Stop trying to fix the interface live.
-2. Switch to the prepared files in `shared_case/outputs/`.
-3. Explain the logic of the flow, not the broken UI.
-4. Continue the lesson from architecture unpacking or create/adapt-skill.
-5. Do not treat `shared_case/outputs/` as the live output path; it is recovery material only.
+## Если Codex или repo flow ломается во время demo
+1. Не пытайтесь чинить интерфейс вживую.
+2. Переключайтесь на prepared files в `shared_case/outputs/`.
+3. Объясняйте логику потока, а не сломанный UI.
+4. Продолжайте урок с этапа разбора архитектуры или create/adapt-skill.
+5. Не трактуйте `shared_case/outputs/` как live output path; это recovery-материал.
 
-## If participants are overwhelmed
-- shorten the step
-- move from full workflow to one transformation
-- remind them that the goal is one next step, not mastery of the whole stack
+## Если участники перегружены
+- сократите шаг
+- перейдите от полной цепочки к одному преобразованию
+- напомните, что цель урока — один следующий шаг, а не мастерство во всём стеке
 
-## If create-or-adapt skill practice becomes too broad
-- force a narrower scope
-- keep only one source, one transformation, one output
-- prefer stub integrations over fake live integrations
+## Если практика create/adapt skill стала слишком широкой
+- жёстко сузьте scope
+- оставьте один источник, одно преобразование и один выход
+- предпочитайте stub integrations фальшивым live integrations

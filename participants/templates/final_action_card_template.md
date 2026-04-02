@@ -1,8 +1,8 @@
-# Final Action Card
+# Итоговая Карточка Действия
 
-Current maturity level:
-One realistic use case:
-What I would test first:
-What I need to start:
-How I will know it worked:
-My next step in the next 7 days:
+Текущий уровень зрелости:
+Один реалистичный рабочий сценарий:
+Что я протестирую первым:
+Что мне нужно для старта:
+Как я пойму, что это сработало:
+Мой следующий шаг в ближайшие 7 дней:

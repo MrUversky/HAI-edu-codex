@@ -1,24 +1,24 @@
-# Final Action Card
+# Итоговая Карточка Действия
 
-Current maturity level: 2 — contextual help, with some early movement toward workflow thinking
+Текущий уровень зрелости: 2 — contextual help, с первыми шагами в сторону workflow thinking
 
-One realistic use case:
-Turn messy internal workshop-planning inputs into a structured planning brief and bounded pilot suggestion.
+Один реалистичный рабочий сценарий:
+Превращать неструктурированные входы по внутреннему планированию воркшопов в понятный planning brief и ограниченное предложение по пилоту.
 
-What I would test first:
-Use the shared-case skill chain plus a Notion-ready follow-up step on one real upcoming workshop planning packet and compare the result against my manual process.
+Что я протестирую первым:
+Прогнать одну реальную будущую подборку workshop-planning материалов через shared-case skill chain и Notion-ready follow-up step, а затем сравнить результат с ручным процессом.
 
-What I need to start:
-- one real packet of planning material
-- the five shared-case skills, including `task-register`
-- one validator pass
-- one human review checkpoint
+Что мне нужно для старта:
+- одна реальная подборка planning-материалов
+- пять shared-case skills, включая `task-register`
+- один validation pass
+- одна человеческая review-точка
 
-How I will know it worked:
-- I get to a coherent structure faster
-- the main tensions are easier to see
-- the resulting next steps are clearer
-- I spend less time manually restructuring inputs
+Как я пойму, что это сработало:
+- я быстрее прихожу к coherent structure
+- основные tensions становятся заметнее
+- resulting next steps становятся яснее
+- я трачу меньше времени на ручную перестройку входов
 
-My next step in the next 7 days:
-Run one real planning packet through the workshop repo flow and capture before/after notes on time, clarity, and usefulness.
+Мой следующий шаг в ближайшие 7 дней:
+Прогнать один реальный planning packet через workshop repo flow и записать before/after notes по времени, ясности и полезности.

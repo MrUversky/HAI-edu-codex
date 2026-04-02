@@ -1,25 +1,25 @@
-# Architecture Unpacking Flow
+# Разбор Архитектуры
 
-Goal: after the hands-on shared case, explain why the lesson is split across several skills instead of one long chat.
+Цель: после общего кейса объяснить, почему урок разбит на несколько навыков, а не на один длинный чат.
 
-Stage framing:
-- Current stage: `architecture unpacking`
-- What is already done: shared case hands-on through `task-register`
-- What we are doing now: explain role boundaries, handoffs, and human checkpoints
-- Expected artifact: participant understanding of the full five-skill chain
+Подача этапа:
+- Текущий этап: `разбор архитектуры`
+- Что уже сделано: общий кейс пройден до `task-register`
+- Что делаем сейчас: объясняем границы ролей, передачу артефактов между шагами и точки человеческой проверки
+- Ожидаемый результат: участник понимает всю цепочку из пяти навыков
 
-Explain:
-- why `shared-case-intake` exists,
-- why `shared-case-analysis` is separate from intake,
-- why `shared-case-workflow` is separate from analysis,
-- why `shared-case-experiment` narrows the result to one pilot,
-- why `task-register` turns the pilot into an operational first-sprint plan,
-- where human judgment stays visible,
-- why `draft -> review -> approve -> save -> handoff` is stronger than relying on chat context alone.
+Нужно объяснить:
+- зачем существует `shared-case-intake`
+- почему `shared-case-analysis` отделён от intake
+- почему `shared-case-workflow` отделён от analysis
+- почему `shared-case-experiment` сужает результат до одного первого пилота
+- почему `task-register` превращает пилот в рабочий план первого спринта
+- где в цепочке остаётся человеческое решение
+- почему `draft -> review -> approve -> save -> handoff` надёжнее, чем опора на память чата
 
-Teaching emphasis:
-- skills are bounded roles, not magic;
-- each step should read an approved artifact, not conversational drift;
-- saved artifacts make the process more reliable, reviewable, and recoverable;
-- the lesson teaches a repeatable workflow, not just a chain of prompts.
-- the shared case now ends on `task_register.md`, not on `pilot_card.md`.
+На чём держать акцент:
+- навыки — это ограниченные роли, а не магия
+- каждый шаг должен читать утверждённый артефакт, а не уезжать в drift разговора
+- сохранённые артефакты делают процесс надёжнее, удобнее для проверки и восстановления
+- урок учит повторяемому процессу, а не просто цепочке prompt-ов
+- общий кейс теперь заканчивается на `task_register.md`, а не на `pilot_card.md`

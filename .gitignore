@@ -8,6 +8,8 @@ participants/*
 
 # Common runtime artifacts produced during local skill runs.
 .agents/skills/*/raw_packet.md
+.agents/skills/*/structured_inputs.md
+.agents/skills/*/intake_trace.md
 .agents/skills/*/validation_report.md
 .agents/skills/*/validation_trace.md
 .agents/skills/*/validation_state.md

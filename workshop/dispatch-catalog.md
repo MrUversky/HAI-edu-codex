@@ -50,6 +50,21 @@
 - Approved file path: `shared_case/run_outputs/structured_inputs.md`
 - Next step: `shared-case-analysis`
 
+### Action: process-external-raw-packet
+- Intent patterns:
+  - `обработай внешний raw packet`
+  - `прогони raw packet через intake`
+  - `сделай strict intake для raw packet`
+  - `структурируй этот raw packet`
+- Entry skill: `.agents/skills/shared-case-intake/SKILL.md`
+- Mode: `strict external raw packet mode`
+- Reads from: one provided `raw_packet.md`, export, or other bounded raw bundle
+- Draft shown as: `structured_inputs` draft based only on the provided packet
+- Approved file paths:
+  - рядом с source packet: `structured_inputs.md`
+  - optional: `intake_trace.md`
+- Next step: `shared-case-analysis` only if the user asks to continue the chain
+
 ### Action: show-next-step
 - Intent patterns:
   - `покажи следующий шаг`
@@ -58,8 +73,9 @@
 - Entry source: `shared_case/run_outputs/shared_case_state.md` if present, otherwise infer from approved runtime artifacts
 - Expected behavior:
   - явно назвать, что уже сохранено
-  - назвать следующий этап
-  - назвать следующий ожидаемый артефакт
+  - отдельно назвать следующий этап
+  - отдельно назвать следующий ожидаемый артефакт
+  - не маскировать запуск следующего шага нейтральной фразой вроде `покажи следующий шаг`
 
 ### Action: run-task-register
 - Intent patterns:

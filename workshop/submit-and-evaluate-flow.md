@@ -1,30 +1,30 @@
-# Submit and Evaluate Flow
+# Этап Submit and Evaluate
 
 Подача этапа:
 - Текущий этап: `submit and evaluate`
 - Что уже сделано: setup, общий кейс, разбор архитектуры, созданный навык, validation, личный следующий шаг
 - Что делаем сейчас: собираем финальный пакет участника
-- Ожидаемый артефакт: один complete submission package с результатом validation
+- Ожидаемый артефакт: один полный submission package с результатом validation
 
-Final participant package should include:
-- participant setup,
-- created or adapted skill,
-- validation trace,
-- validation report,
-- final action card.
+Итоговый пакет участника должен включать:
+- `participant_setup.md`
+- created or adapted skill
+- `validation_trace.md`
+- `validation_report.md`
+- `final_action_card.md`
 
-Canonical validation path:
+Канонический validation path:
 - participant-facing entry: `.agents/skills/validate-skill/SKILL.md`
 - internal orchestrator: `.codex/agents/validation-orchestrator.toml`
 
-Optional:
-- session log excerpt,
-- evaluator comments,
-- overall score.
+Опционально:
+- session log excerpt
+- evaluator comments
+- overall score
 
-Evaluation should focus on:
-- clarity,
-- usefulness,
-- safety,
-- realism,
-- repeatability.
+Оценка должна смотреть прежде всего на:
+- clarity
+- usefulness
+- safety
+- realism
+- repeatability

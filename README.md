@@ -1,41 +1,42 @@
 # HAI Edu Codex Workshop Repo
 
-This repository is the working environment for the agent systems workshop.
+Этот репозиторий — рабочая среда для воркшопа по skill-based workflows.
 
-The lesson logic is:
-1. setup and light personalization
-2. shared case hands-on
-3. architecture unpacking
-4. create or adapt a skill
-5. validate the result
-6. define one personal next step
-7. submit and evaluate
+Логика урока такая:
+1. `setup` и лёгкая персонализация
+2. общий кейс
+3. разбор архитектуры
+4. создать или адаптировать навык
+5. провалидировать результат
+6. определить один личный следующий шаг
+7. собрать итоговый пакет
 
-## Main folders
-- `workshop/` — lesson flows and operating logic
-- `.agents/skills/` — canonical Codex runtime layer for the workshop
-- `reference/` — best-practice help layer for Codex
-- `agents/` — legacy source material for migrated workshop logic
-- `validators/` — legacy validation source material used by `validate-skill`
-- `practice/` — create/adapt-skill tasks and templates
-- `participants/` — participant templates and outputs
-- `evals/` — scoring logic
+## Основные папки
+- `workshop/` — сценарии урока и операционная логика
+- `.agents/skills/` — канонический runtime-слой воркшопа в Codex
+- `reference/` — справочный слой и best practices
+- `agents/` — legacy source material из ранней структуры
+- `validators/` — legacy source material для validation logic
+- `practice/` — задания и шаблоны для этапа create/adapt
+- `participants/` — шаблоны и participant-артефакты
+- `evals/` — логика оценки
 - `sources/` — verified source notes
 
-## How to use this repo in Codex
-Start from [setup-flow.md](/Users/Igor/DemoHAI_V1/workshop/setup-flow.md), then move through the flows in order.
-Use [dispatch-catalog.md](/Users/Igor/DemoHAI_V1/workshop/dispatch-catalog.md) as the canonical mapping from short participant commands to workshop runtime steps.
+## Как использовать репозиторий в Codex
+Начинайте с [setup-flow.md](/Users/Igor/DemoHAI_V1/workshop/setup-flow.md), затем идите по flow-файлам по порядку.
+Используйте [dispatch-catalog.md](/Users/Igor/DemoHAI_V1/workshop/dispatch-catalog.md) как каноническую карту коротких participant-команд.
 
-Do not jump straight into the participant's personal business case.
-First: observe.
-Then: understand.
-Then: touch the mechanics.
-Only then: apply to self.
+Не уходите сразу в личный рабочий кейс участника.
+Сначала:
+1. посмотреть
+2. понять
+3. попробовать механику
+4. только потом применить к себе
 
-## Canonical runtime
-The workshop now treats Codex `skills` as the canonical execution format.
+## Канонический runtime
+Воркшоп использует Codex `skills` как канонический формат исполнения.
 
-Use these `v1` workshop skills:
+Используйте эти workshop-skills `v1`:
 - `.agents/skills/shared-case-intake/`
 - `.agents/skills/shared-case-analysis/`
 - `.agents/skills/shared-case-workflow/`
@@ -45,13 +46,18 @@ Use these `v1` workshop skills:
 - `.agents/skills/validate-skill/`
 - `.agents/skills/personal-next-step/`
 
-Hybrid validation runtime:
-- participant-facing validation entry: `.agents/skills/validate-skill/`
+Для внешних сырьевых пакетов используйте тот же `.agents/skills/shared-case-intake/`, но в строгом режиме:
+- вход = только один переданный `raw_packet.md` или другой ограниченный сырой пакет;
+- helper не подтягивает прошлый conversational context и старые shared-case outputs;
+- `structured_inputs.md` сохраняется рядом с источником, если не задан другой путь.
+
+Validation runtime:
+- participant-facing вход: `.agents/skills/validate-skill/`
 - internal orchestrator: `.codex/agents/validation-orchestrator.toml`
-- validation support skills:
+- skills поддержки validation:
   - `.agents/skills/reviewer-role/`
   - `.agents/skills/safety-validator/`
   - `.agents/skills/architecture-validator/`
   - `.agents/skills/skill-structure-check/`
 
-Treat `agents/*` and `validators/*` as legacy source material and references during the migration period.
+Во время migration-периода трактуйте `agents/*` и `validators/*` как legacy source material и references.

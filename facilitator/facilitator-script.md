@@ -1,28 +1,28 @@
-# Facilitator Script
+# Сценарий Для Ведущего
 
-## Core lesson logic
-1. setup and light personalization
-2. run the shared case hands-on
-3. unpack the architecture
-4. create or adapt one skill
-5. validate it
-6. define one realistic personal next step
+## Базовая логика урока
+1. `setup` и лёгкая персонализация
+2. пройти общий кейс руками
+3. разобрать архитектуру
+4. создать или адаптировать один навык
+5. провалидировать его
+6. определить один реалистичный личный следующий шаг
 
-## Key facilitation rules
-- do not ask for a full personal business case too early
-- keep participants from overengineering
-- protect the difference between setup, shared case, skill creation, and personal application
-- redirect broad transformation talk into one bounded pilot
-- keep the shared case grounded in approved artifacts, not chat drift
-- use `workshop/dispatch-catalog.md` when participant commands need explicit runtime interpretation
-- during the live shared case, treat `shared_case/run_outputs/shared_case_state.md` as the default source of truth for current stage and next artifact
-- treat `shared_case/outputs/*` as prepared examples and recovery materials, not as the live output path
-- during validation, say explicitly that the validation agent is running several checks in sequence
+## Ключевые правила ведения
+- не просить полный личный бизнес-кейс слишком рано
+- не давать участникам переусложнять решение
+- удерживать разницу между `setup`, общим кейсом, созданием навыка и личным применением
+- сводить широкие разговоры про трансформацию к одному ограниченному пилоту
+- держать общий кейс привязанным к утверждённым артефактам, а не к drift разговора
+- использовать `workshop/dispatch-catalog.md`, когда нужно явно интерпретировать participant-команды
+- во время live shared case использовать `shared_case/run_outputs/shared_case_state.md` как основной источник правды о текущем этапе и следующем артефакте
+- трактовать `shared_case/outputs/*` как подготовленные примеры и recovery-материалы, а не как live output path
+- на этапе validation прямо говорить, что агент валидации запускает несколько последовательных проверок
 
-## If participants get lost
-Ask:
-- what is the input?
-- what is the output?
-- who owns the result?
-- where does AI help?
-- where should a human still decide?
+## Если участники потерялись
+Спросить:
+- какой здесь вход?
+- какой здесь выход?
+- кто владеет результатом?
+- где помогает AI?
+- где человек всё ещё должен принимать решение?
