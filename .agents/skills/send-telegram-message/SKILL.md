@@ -1,7 +1,7 @@
 ---
-
-## name: send-telegram-message
+name: send-telegram-message
 description: Prepare a compact Telegram message from a bounded text block and send it through the shared Telegram adapter with live or dry-run mode.
+---
 
 # Send Telegram Message
 
@@ -13,7 +13,7 @@ description: Prepare a compact Telegram message from a bounded text block and se
 
 - готовый текстовый блок
 - краткий summary из demo или блок `Задачи` из exercise
-- live Telegram settings, если они доступны
+- live Telegram settings, если они доступны через env vars или локальный `.env.local`
 
 ## Outputs
 
@@ -24,6 +24,7 @@ description: Prepare a compact Telegram message from a bounded text block and se
 
 - сообщение короткое и читаемое
 - текст подходит для группового чата
+- по demo batch видно не только имя кандидата, но и 1-2 содержательных сигнала
 - live send и dry-run различаются явно
 
 ## Out of Scope
@@ -36,14 +37,19 @@ description: Prepare a compact Telegram message from a bounded text block and se
 
 1. Возьми bounded текстовый блок.
 2. Сожми его до короткого сообщения для группы.
-3. Проверь, что в сообщении нет лишней служебной информации.
-4. Если live Telegram settings доступны, отправь сообщение через adapter.
-5. Если live send недоступен, сохрани dry-run результат и явно отметь это.
-6. Сохрани итоговый текст в соответствующий файл outputs.
+3. Для demo batch включи по каждому кандидату:
+   - имя
+   - рекомендацию или match
+   - 1-2 самых полезных сигнала
+4. Не своди summary к пустому списку имён без контекста.
+5. Проверь, что в сообщении нет лишней служебной информации.
+6. Если live Telegram settings доступны, отправь сообщение через adapter.
+7. Если live send недоступен, сохрани dry-run результат и явно отметь это.
+8. Сохрани итоговый текст в соответствующий файл outputs.
 
 ## Human Review
 
-Перед live send можно показать финальный текст, если пользователь явно просит review. Для demo допускается silent send с финальным отчётом в конце.
+Для student flow сначала покажи финальный текст на экране, затем отправь его. Для demo допускается silent send с финальным отчётом в конце, но само сообщение должно оставаться содержательным.
 
 ## Example Usage
 

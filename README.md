@@ -30,6 +30,7 @@
 
 - практический workflow `meeting_raw.txt -> задачи / вопросы / риски -> сохранение результата -> отправка задач в Telegram`
 - здесь участники создают новый skill `extract-meeting-actions`
+- reference skill для самопроверки лежит в `examples/reference_skills/`
 
 ## Как устроен репозиторий
 
@@ -53,18 +54,14 @@
 
 ## Как начать урок
 
-Короткая команда старта:
+Есть два явных режима старта:
 
-`Запусти урок`
+- `Запусти урок для преподавателя`
+- `Запусти урок для участника`
 
-Или:
-
-`Давай начнем урок`
-
-Ожидаемое поведение:
-- сначала Codex проводит лёгкий setup по одному вопросу за раз
-- затем помогает сохранить `participants/<name>/participant_setup.md`
-- после этого переводит к карте мира и demo
+Что происходит дальше:
+- в режиме преподавателя: setup -> concepts -> demo -> короткий разбор архитектуры
+- в режиме участника: setup -> concepts -> сразу exercise, без повторного demo
 
 ## Как запустить demo
 
@@ -82,13 +79,33 @@
 - [AGENTS.md](/Users/Igor/DemoHAI_V1/AGENTS.md)
 - [resume-processing-agent.toml](/Users/Igor/DemoHAI_V1/.codex/agents/resume-processing-agent.toml)
 
+Человеческое описание demo-пайплайна:
+
+`взять письмо -> собрать пакет кандидата -> оценить -> отправить итог в Telegram`
+
+Техническое описание того же пайплайна:
+
+`Gmail -> fetch-gmail-resumes -> evaluate-resume-batch -> send-telegram-message`
+
+Постоянный вход для demo-оценки:
+
+- [demo_role_brief.md](/Users/Igor/DemoHAI_V1/examples/demo_role_brief.md)
+
+Если полезный текст кандидата лежит во вложенном PDF, для teacher demo можно добавить ещё два шага:
+
+`download attachment -> extract PDF text`
+
+Для этого в repo есть:
+- [scripts/download_gmail_attachment.py](/Users/Igor/DemoHAI_V1/scripts/download_gmail_attachment.py)
+- [scripts/extract_pdf_text.py](/Users/Igor/DemoHAI_V1/scripts/extract_pdf_text.py)
+
 ## Как проходит exercise
 
 Участник не пишет skill вслепую и не идёт сразу в `/skill-creator`.
 
 Сначала он пишет в чат:
 
-`Хочу сделать skill, который из сырого текста встречи выделяет задачи, вопросы и риски, сохраняет результат в markdown, а потом позволяет отправить задачи через существующий Telegram skill. Сначала задай мне уточняющие вопросы по одному и помоги собрать хороший контракт.`
+`Хочу сделать skill extract-meeting-actions, который по итогам встречи собирает задачи, вопросы и риски. Помоги мне короткими вопросами собрать хороший контракт, а потом подготовь prompt для /skill-creator.`
 
 После этого:
 
@@ -96,11 +113,25 @@
 2. Codex собирает итоговый prompt для `/skill-creator`
 3. вы копируете этот prompt и запускаете `/skill-creator`
 4. создаётся новый `SKILL.md`
-5. участник открывает файл и руками проверяет контракт
-6. участник сверяется с reference skill в [examples/reference_skills/extract-meeting-actions/SKILL.md](/Users/Igor/DemoHAI_V1/examples/reference_skills/extract-meeting-actions/SKILL.md)
-7. затем прогоняет созданный skill на [meeting_raw.txt](/Users/Igor/DemoHAI_V1/examples/meeting_raw.txt)
-8. сохраняет результат в `outputs/exercise/meeting_actions.md`
-9. отдельно отправляет блок задач через `send-telegram-message`
+5. сразу после генерации вы проверяете файл через [scripts/quick_validate.py](/Users/Igor/DemoHAI_V1/scripts/quick_validate.py)
+6. если frontmatter или имя сломались, вы правите их через [scripts/normalize_skill.py](/Users/Igor/DemoHAI_V1/scripts/normalize_skill.py)
+7. участник открывает файл и руками проверяет контракт
+8. участник сверяется с reference skill в [examples/reference_skills/extract-meeting-actions/SKILL.md](/Users/Igor/DemoHAI_V1/examples/reference_skills/extract-meeting-actions/SKILL.md)
+9. затем прогоняет созданный skill на [meeting_raw.txt](/Users/Igor/DemoHAI_V1/examples/meeting_raw.txt)
+10. Codex показывает результат на экране и сохраняет его в файл
+11. после этого участник отправляет в чат Codex `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID`, Codex сохраняет их локально в `.env.local`
+12. затем участник отправляет блок задач через `send-telegram-message`
+
+Какие вопросы Codex должен задавать здесь:
+- что обычно приходит на вход
+- что должно получиться на выходе
+- что обязательно должно попасть в markdown
+- где человек смотрит и подтверждает результат
+
+Какие вопросы Codex не должен задавать:
+- должен ли skill сам вызывать Telegram skill
+- нужна ли ещё одна skill для отправки
+- вопросы про общую архитектуру, если repo уже зафиксировал решение
 
 ## Что делать после урока
 
@@ -114,3 +145,19 @@
 4. выбрать один источник
 5. описать один желаемый результат
 6. создать свой первый новый skill по шаблону
+
+## Workshop helpers
+
+В repo есть два общих helper script:
+
+- [scripts/init_skill.py](/Users/Igor/DemoHAI_V1/scripts/init_skill.py)
+- [scripts/quick_validate.py](/Users/Igor/DemoHAI_V1/scripts/quick_validate.py)
+- [scripts/normalize_skill.py](/Users/Igor/DemoHAI_V1/scripts/normalize_skill.py)
+- [scripts/download_gmail_attachment.py](/Users/Igor/DemoHAI_V1/scripts/download_gmail_attachment.py)
+- [scripts/extract_pdf_text.py](/Users/Igor/DemoHAI_V1/scripts/extract_pdf_text.py)
+
+Они нужны как workshop-утилиты:
+- `init_skill.py` создаёт стартовый каркас skill
+- `quick_validate.py` делает быстрый sanity check после генерации
+
+Это не обязательный первый шаг урока, но это наши осознанные repo-specific helpers.
