@@ -27,3 +27,8 @@
 
 6. Создай свой первый новый skill по шаблону.
 Открой [new_skill_template.md](/Users/Igor/DemoHAI_V1/templates/new_skill_template.md) и используй его как контракт.
+
+Если хочешь ускорить первый черновик:
+- [scripts/init_skill.py](/Users/Igor/DemoHAI_V1/scripts/init_skill.py)
+- [scripts/quick_validate.py](/Users/Igor/DemoHAI_V1/scripts/quick_validate.py)
+- [scripts/normalize_skill.py](/Users/Igor/DemoHAI_V1/scripts/normalize_skill.py)

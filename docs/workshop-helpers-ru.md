@@ -1,6 +1,6 @@
 # Workshop Helpers
 
-В repo есть два общих helper script:
+В repo есть несколько общих workshop helper scripts:
 
 - [scripts/init_skill.py](/Users/Igor/DemoHAI_V1/scripts/init_skill.py)
 - [scripts/quick_validate.py](/Users/Igor/DemoHAI_V1/scripts/quick_validate.py)

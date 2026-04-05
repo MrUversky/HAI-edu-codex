@@ -12,11 +12,22 @@
 - Новые skills делать маленькими и узкими.
 - Новые agents добавлять только тогда, когда реально нужен orchestration нескольких шагов.
 - Agent-файлы должны нести поведение, чтобы команды запуска оставались короткими.
+- Поддерживать два lesson flow: для преподавателя и для участника.
+- Участник не должен повторно проходить demo Gmail/TG после teacher demo.
 - Для учебного flow придерживаться паттерна `draft -> review -> approve -> save`.
 - В demo агент может работать без показа промежуточных draft, но финальный отчёт по шагам и артефактам обязателен.
 - Live integrations использовать только там, где они реально доступны.
 - Если live integration недоступна, явно сохранять dry-run результат.
+- Если участник передаёт секреты через чат Codex, сохранять их только локально в `.env.local` и не повторять значения в ответах.
+- `.env.local`, generated drafts, outputs и generated lesson skills не должны попадать в git по умолчанию.
 - Новые skills оформлять по каноническому шаблону из `templates/new_skill_template.md`.
 - Новые agents оформлять по каноническому шаблону из `templates/new_agent_template.md`.
+- Для exercise canonical skill name: `extract-meeting-actions`.
+- После `/skill-creator` сначала запускать `scripts/quick_validate.py`, а если сломаны имя или frontmatter, использовать `scripts/normalize_skill.py`.
+- Если repo ссылается на `scripts/init_skill.py` и `scripts/quick_validate.py`, они должны реально существовать и следовать workshop contract.
+- Если repo ссылается на `scripts/normalize_skill.py`, он тоже должен реально существовать и следовать workshop contract.
+- Для teacher demo допускается отдельный attachment flow: скачать PDF-вложение, извлечь текст и только потом оценивать кандидата.
+- Gmail OAuth token и локальные attachment/text artifacts не должны попадать в git.
+- Если helper script отсутствует, не ссылаться на него как на ожидаемый путь.
 - В начале урока собирать только лёгкий `participant setup`.
 - Не уходить в личный use case участника слишком рано.

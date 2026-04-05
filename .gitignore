@@ -1,4 +1,6 @@
 .DS_Store
+/.env.local
+/.gmail-token.json
 
 participants/*
 !participants/examples/
@@ -9,14 +11,27 @@ participants/*
 drafts/*
 !drafts/demo/
 !drafts/demo/.gitkeep
+drafts/demo/*
+!drafts/demo/.gitkeep
 !drafts/exercise/
+!drafts/exercise/.gitkeep
+drafts/exercise/*
 !drafts/exercise/.gitkeep
 
 outputs/*
 !outputs/demo/
 !outputs/demo/.gitkeep
+outputs/demo/*
+!outputs/demo/.gitkeep
 !outputs/exercise/
 !outputs/exercise/.gitkeep
+outputs/exercise/*
+!outputs/exercise/.gitkeep
+
+drafts/demo/attachments/*
+!drafts/demo/attachments/.gitkeep
+drafts/demo/extracted/*
+!drafts/demo/extracted/.gitkeep
 
 # Common runtime artifacts produced during local skill runs.
 .agents/skills/*/raw_packet.md
@@ -26,5 +41,5 @@ outputs/*
 .agents/skills/*/validation_trace.md
 .agents/skills/*/validation_state.md
 
-# Exercise skill is generated during the lesson and should not be committed by default.
-.agents/skills/extract-meeting-actions/
+# Generated exercise skills should not be committed by default.
+.agents/skills/extract-meeting-*/

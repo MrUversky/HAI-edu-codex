@@ -12,6 +12,21 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 
+def load_env_local() -> None:
+    env_file = Path(".env.local")
+    if not env_file.exists():
+        return
+    for line in env_file.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, value = line.split("=", 1)
+        key = key.strip()
+        value = value.strip()
+        if key and key not in os.environ:
+            os.environ[key] = value
+
+
 def read_message(path: str | None) -> str:
     if path:
         return Path(path).read_text(encoding="utf-8").strip()
@@ -48,6 +63,7 @@ def main() -> int:
     if not text:
         raise SystemExit("Message is empty.")
 
+    load_env_local()
     token = os.getenv("TELEGRAM_BOT_TOKEN")
     chat_id = os.getenv("TELEGRAM_CHAT_ID")
 
