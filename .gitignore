@@ -6,6 +6,18 @@ participants/*
 !participants/templates/
 !participants/templates/**
 
+drafts/*
+!drafts/demo/
+!drafts/demo/.gitkeep
+!drafts/exercise/
+!drafts/exercise/.gitkeep
+
+outputs/*
+!outputs/demo/
+!outputs/demo/.gitkeep
+!outputs/exercise/
+!outputs/exercise/.gitkeep
+
 # Common runtime artifacts produced during local skill runs.
 .agents/skills/*/raw_packet.md
 .agents/skills/*/structured_inputs.md
@@ -13,5 +25,6 @@ participants/*
 .agents/skills/*/validation_report.md
 .agents/skills/*/validation_trace.md
 .agents/skills/*/validation_state.md
-shared_case/run_outputs/*
-!shared_case/run_outputs/.gitkeep
+
+# Exercise skill is generated during the lesson and should not be committed by default.
+.agents/skills/extract-meeting-actions/

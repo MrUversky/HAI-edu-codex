@@ -1,21 +1,22 @@
 # Workshop Repo Ground Rules
 
-- Work in short, practical steps.
-- Ask one question at a time during setup.
-- Do not jump to the participant's personal use case too early.
-- In the middle of the lesson, prioritize understanding shared mechanics over premature personalization.
-- Always save outputs to files when asked.
-- Use Russian by default in participant-facing and facilitator-facing text; keep English only for filenames, fixed product terms, or unavoidable technical names.
-- Prefer one realistic first pilot over broad transformation ideas.
-- Separate explanation, execution, validation, and reflection.
-- When creating or adapting a skill, always run validation before final submission.
-- Do not claim access to external systems unless the integration is truly available.
-- Treat stub integrations as stubs and label them clearly.
-- Use `.agents/skills/` as the canonical workshop runtime layer.
-- Use `workshop/dispatch-catalog.md` as the canonical mapping from short participant commands to runtime steps.
-- Treat `agents/*` and `validators/*` as migration source material and references unless a flow says otherwise.
-- During shared-case execution, use `draft -> review -> approve -> save -> handoff` instead of relying on chat context alone.
-- During shared-case execution, write live artifacts to `shared_case/run_outputs/` and treat `shared_case/outputs/` as prepared examples.
-- At every lesson transition, make the current stage, expected artifact, and next step explicit.
-- When the participant's name is already known, use it naturally and sparingly in later guidance.
-- Use `.codex/agents/` only for internal orchestrator behavior that truly benefits from a custom agent profile.
+- Это учебный starter repo, а не production-платформа.
+- Приоритет репозитория: ясность, компактность, читаемость.
+- Русский язык использовать по умолчанию во всех учебных документах и объяснениях.
+- Имена файлов, skill names, agent names и технические идентификаторы оставлять на английском.
+- Агент координирует процесс.
+- Skill выполняет одну повторяемую операцию.
+- Tool или integration layer не смешивать со skill.
+- Не делать скрытую магию и тяжёлую автоматизацию.
+- Показывать новичку, где вход, где логика и где выход.
+- Новые skills делать маленькими и узкими.
+- Новые agents добавлять только тогда, когда реально нужен orchestration нескольких шагов.
+- Agent-файлы должны нести поведение, чтобы команды запуска оставались короткими.
+- Для учебного flow придерживаться паттерна `draft -> review -> approve -> save`.
+- В demo агент может работать без показа промежуточных draft, но финальный отчёт по шагам и артефактам обязателен.
+- Live integrations использовать только там, где они реально доступны.
+- Если live integration недоступна, явно сохранять dry-run результат.
+- Новые skills оформлять по каноническому шаблону из `templates/new_skill_template.md`.
+- Новые agents оформлять по каноническому шаблону из `templates/new_agent_template.md`.
+- В начале урока собирать только лёгкий `participant setup`.
+- Не уходить в личный use case участника слишком рано.
